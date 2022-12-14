@@ -1,0 +1,1405 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8865106D-B163-444D-945F-1A12A9AFE945}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Quản_lý_điểm_sinh_vien_CNTT</RootNamespace>
+    <AssemblyName>Quản lý điểm sinh vien CNTT</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <StartupObject>Quản_lý_điểm_sinh_vien_CNTT.Program</StartupObject>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="microsoft.office.interop.excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\microsoft.office.interop.excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\Framework64\v2.0.50727\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommonConnect.cs" />
+    <Compile Include="DataSetDSSV.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetDSSV.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetDSThilai.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetDSThilai.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSettongket.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSettongket.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSettongketdiem.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSettongketdiem.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="frmDangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDangNhap.designer.cs">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDoiMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDoiMatKhau.Designer.cs">
+      <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDSThiLai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDSThiLai.Designer.cs">
+      <DependentUpon>frmDSThiLai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGiangVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGiangVien.Designer.cs">
+      <DependentUpon>frmGiangVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLop.Designer.cs">
+      <DependentUpon>frmLop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmKhoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKhoa.Designer.cs">
+      <DependentUpon>frmKhoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMonhoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMonhoc.Designer.cs">
+      <DependentUpon>frmMonhoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQLDiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQLDiem.Designer.cs">
+      <DependentUpon>frmQLDiem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQLDiemHoclai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQLDiemHoclai.designer.cs">
+      <DependentUpon>frmQLDiemHoclai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQLDiemThiLai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQLDiemThiLai.designer.cs">
+      <DependentUpon>frmQLDiemThiLai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQLSV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQLSV.Designer.cs">
+      <DependentUpon>frmQLSV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQuanLyNguoiDung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuanLyNguoiDung.Designer.cs">
+      <DependentUpon>frmQuanLyNguoiDung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTimDiemSV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTimDiemSV.Designer.cs">
+      <DependentUpon>frmTimDiemSV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="DSSV.rdlc" />
+    <EmbeddedResource Include="frmDangNhap.resx">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDoiMatKhau.resx">
+      <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDSThiLai.resx">
+      <DependentUpon>frmDSThiLai.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGiangVien.resx">
+      <DependentUpon>frmGiangVien.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLop.resx">
+      <DependentUpon>frmLop.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKhoa.resx">
+      <DependentUpon>frmKhoa.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMonhoc.resx">
+      <DependentUpon>frmMonhoc.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQLDiem.resx">
+      <DependentUpon>frmQLDiem.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQLDiemHoclai.resx">
+      <DependentUpon>frmQLDiemHoclai.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQLDiemThiLai.resx">
+      <DependentUpon>frmQLDiemThiLai.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQLSV.resx">
+      <DependentUpon>frmQLSV.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQuanLyNguoiDung.resx">
+      <DependentUpon>frmQuanLyNguoiDung.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTimDiemSV.resx">
+      <DependentUpon>frmTimDiemSV.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="ReportDSSV.resx">
+      <DependentUpon>ReportDSSV.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportDSThilai.rdlc" />
+    <EmbeddedResource Include="ReportDSThilai.resx">
+      <DependentUpon>ReportDSThilai.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporttongket.rdlc" />
+    <EmbeddedResource Include="ReportTongKet.resx">
+      <DependentUpon>ReportTongKet.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SVThilaivaHoclai.resx">
+      <DependentUpon>SVThilaivaHoclai.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trogiup.resx">
+      <DependentUpon>Trogiup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="QuanlydiemDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanlydiemDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyDiemDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyDiemDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanlydiemDataSet10.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanlydiemDataSet10.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyDiemDataSet11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyDiemDataSet11.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanlydiemDataSet111.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanlydiemDataSet111.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanlydiemDataSet12.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanlydiemDataSet12.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanlydiemDataSet121.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanlydiemDataSet121.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanlydiemDataSet13.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanlydiemDataSet13.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanlydiemDataSet14.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanlydiemDataSet14.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanlydiemDataSet15.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanlydiemDataSet15.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanlydiemDataSet16.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanlydiemDataSet16.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanlydiemDataSet17.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanlydiemDataSet17.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanlydiemDataSet18.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanlydiemDataSet18.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanlydiemDataSet19.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanlydiemDataSet19.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyDiemDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyDiemDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanlydiemDataSet20.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanlydiemDataSet20.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanlydiemDataSet21.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanlydiemDataSet21.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanlydiemDataSet211.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanlydiemDataSet211.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanlydiemDataSet22.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanlydiemDataSet22.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanlydiemDataSet23.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanlydiemDataSet23.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanlydiemDataSet24.cs">
+      <DependentUpon>QuanlydiemDataSet24.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanlydiemDataSet24.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanlydiemDataSet24.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanlydiemDataSet25.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanlydiemDataSet25.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanlydiemDataSet26.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanlydiemDataSet26.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanlydiemDataSet27.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanlydiemDataSet27.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanlydiemDataSet28.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanlydiemDataSet28.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanlydiemDataSet29.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanlydiemDataSet29.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyDiemDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyDiemDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanlydiemDataSet30.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanlydiemDataSet30.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanlydiemDataSet31.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanlydiemDataSet31.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanlydiemDataSet311.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanlydiemDataSet311.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanlydiemDataSet32.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanlydiemDataSet32.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanlydiemDataSet33.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanlydiemDataSet33.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanlydiemDataSet34.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanlydiemDataSet34.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanlydiemDataSet35.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanlydiemDataSet35.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanlydiemDataSet36.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanlydiemDataSet36.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanlydiemDataSet37.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanlydiemDataSet37.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanlydiemDataSet38.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanlydiemDataSet38.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanlydiemDataSet39.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanlydiemDataSet39.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanlydiemDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanlydiemDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanlydiemDataSet40.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanlydiemDataSet40.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanlydiemDataSet41.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanlydiemDataSet41.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanlydiemDataSet42.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanlydiemDataSet42.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanlydiemDataSet43.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanlydiemDataSet43.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanlydiemDataSet44.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanlydiemDataSet44.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanlydiemDataSet45.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanlydiemDataSet45.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanlydiemDataSet46.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanlydiemDataSet46.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanlydiemDataSet47.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanlydiemDataSet47.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanlydiemDataSet48.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanlydiemDataSet48.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanlydiemDataSet49.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanlydiemDataSet49.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanlydiemDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanlydiemDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanlydiemDataSet50.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanlydiemDataSet50.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanlydiemDataSet51.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanlydiemDataSet51.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanlydiemDataSet52.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanlydiemDataSet52.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanlydiemDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanlydiemDataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanlydiemDataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanlydiemDataSet7.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanlydiemDataSet8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanlydiemDataSet8.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanlydiemDataSet9.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanlydiemDataSet9.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReportDSSV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportDSSV.Designer.cs">
+      <DependentUpon>ReportDSSV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportDSThilai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportDSThilai.Designer.cs">
+      <DependentUpon>ReportDSThilai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportTongKet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportTongKet.Designer.cs">
+      <DependentUpon>ReportTongKet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SVThilaivaHoclai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SVThilaivaHoclai.Designer.cs">
+      <DependentUpon>SVThilaivaHoclai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Thaotac.cs" />
+    <Compile Include="Trogiup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trogiup.Designer.cs">
+      <DependentUpon>Trogiup.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hj.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Copy of truongdinhi_Attachments_dhbkAutosave_311102092.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CVAUNI.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1735096137-1-ts12.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="anh\user_password.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="anh\user_group_new.ico" />
+    <None Include="app.config" />
+    <None Include="DataSetDSSV.xsc">
+      <DependentUpon>DataSetDSSV.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetDSSV.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetDSSV.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetDSSV.xss">
+      <DependentUpon>DataSetDSSV.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetDSThilai.xsc">
+      <DependentUpon>DataSetDSThilai.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetDSThilai.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetDSThilai.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetDSThilai.xss">
+      <DependentUpon>DataSetDSThilai.xsd</DependentUpon>
+    </None>
+    <None Include="DataSettongket.xsc">
+      <DependentUpon>DataSettongket.xsd</DependentUpon>
+    </None>
+    <None Include="DataSettongket.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSettongket.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSettongket.xss">
+      <DependentUpon>DataSettongket.xsd</DependentUpon>
+    </None>
+    <None Include="DataSettongketdiem.xsc">
+      <DependentUpon>DataSettongketdiem.xsd</DependentUpon>
+    </None>
+    <None Include="DataSettongketdiem.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSettongketdiem.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSettongketdiem.xss">
+      <DependentUpon>DataSettongketdiem.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet.xsc">
+      <DependentUpon>QuanlydiemDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanlydiemDataSet.Designer.cs</LastGenOutput>
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="QuanlydiemDataSet.xss">
+      <DependentUpon>QuanlydiemDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QuanLyDiemDataSet1.xsc">
+      <DependentUpon>QuanLyDiemDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="QuanLyDiemDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanLyDiemDataSet1.Designer.cs</LastGenOutput>
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="QuanLyDiemDataSet1.xss">
+      <DependentUpon>QuanLyDiemDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet10.xsc">
+      <DependentUpon>QuanlydiemDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet10.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanlydiemDataSet10.Designer.cs</LastGenOutput>
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="QuanlydiemDataSet10.xss">
+      <DependentUpon>QuanlydiemDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="QuanLyDiemDataSet11.xsc">
+      <DependentUpon>QuanLyDiemDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="QuanLyDiemDataSet11.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanLyDiemDataSet11.Designer.cs</LastGenOutput>
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="QuanLyDiemDataSet11.xss">
+      <DependentUpon>QuanLyDiemDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet111.xsc">
+      <DependentUpon>QuanlydiemDataSet111.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet111.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanlydiemDataSet111.Designer.cs</LastGenOutput>
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="QuanlydiemDataSet111.xss">
+      <DependentUpon>QuanlydiemDataSet111.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet12.xsc">
+      <DependentUpon>QuanlydiemDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet12.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanlydiemDataSet12.Designer.cs</LastGenOutput>
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="QuanlydiemDataSet12.xss">
+      <DependentUpon>QuanlydiemDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet121.xsc">
+      <DependentUpon>QuanlydiemDataSet121.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet121.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanlydiemDataSet121.Designer.cs</LastGenOutput>
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="QuanlydiemDataSet121.xss">
+      <DependentUpon>QuanlydiemDataSet121.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet13.xsc">
+      <DependentUpon>QuanlydiemDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet13.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanlydiemDataSet13.Designer.cs</LastGenOutput>
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="QuanlydiemDataSet13.xss">
+      <DependentUpon>QuanlydiemDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet14.xsc">
+      <DependentUpon>QuanlydiemDataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet14.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanlydiemDataSet14.Designer.cs</LastGenOutput>
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="QuanlydiemDataSet14.xss">
+      <DependentUpon>QuanlydiemDataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet15.xsc">
+      <DependentUpon>QuanlydiemDataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet15.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanlydiemDataSet15.Designer.cs</LastGenOutput>
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="QuanlydiemDataSet15.xss">
+      <DependentUpon>QuanlydiemDataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet16.xsc">
+      <DependentUpon>QuanlydiemDataSet16.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet16.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanlydiemDataSet16.Designer.cs</LastGenOutput>
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="QuanlydiemDataSet16.xss">
+      <DependentUpon>QuanlydiemDataSet16.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet17.xsc">
+      <DependentUpon>QuanlydiemDataSet17.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet17.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanlydiemDataSet17.Designer.cs</LastGenOutput>
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="QuanlydiemDataSet17.xss">
+      <DependentUpon>QuanlydiemDataSet17.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet18.xsc">
+      <DependentUpon>QuanlydiemDataSet18.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet18.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanlydiemDataSet18.Designer.cs</LastGenOutput>
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="QuanlydiemDataSet18.xss">
+      <DependentUpon>QuanlydiemDataSet18.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet19.xsc">
+      <DependentUpon>QuanlydiemDataSet19.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet19.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanlydiemDataSet19.Designer.cs</LastGenOutput>
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="QuanlydiemDataSet19.xss">
+      <DependentUpon>QuanlydiemDataSet19.xsd</DependentUpon>
+    </None>
+    <None Include="QuanLyDiemDataSet2.xsc">
+      <DependentUpon>QuanLyDiemDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="QuanLyDiemDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanLyDiemDataSet2.Designer.cs</LastGenOutput>
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="QuanLyDiemDataSet2.xss">
+      <DependentUpon>QuanLyDiemDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet20.xsc">
+      <DependentUpon>QuanlydiemDataSet20.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet20.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanlydiemDataSet20.Designer.cs</LastGenOutput>
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="QuanlydiemDataSet20.xss">
+      <DependentUpon>QuanlydiemDataSet20.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet21.xsc">
+      <DependentUpon>QuanlydiemDataSet21.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet21.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanlydiemDataSet21.Designer.cs</LastGenOutput>
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="QuanlydiemDataSet21.xss">
+      <DependentUpon>QuanlydiemDataSet21.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet211.xsc">
+      <DependentUpon>QuanlydiemDataSet211.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet211.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanlydiemDataSet211.Designer.cs</LastGenOutput>
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="QuanlydiemDataSet211.xss">
+      <DependentUpon>QuanlydiemDataSet211.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet22.xsc">
+      <DependentUpon>QuanlydiemDataSet22.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet22.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanlydiemDataSet22.Designer.cs</LastGenOutput>
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="QuanlydiemDataSet22.xss">
+      <DependentUpon>QuanlydiemDataSet22.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet23.xsc">
+      <DependentUpon>QuanlydiemDataSet23.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet23.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanlydiemDataSet23.Designer.cs</LastGenOutput>
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="QuanlydiemDataSet23.xss">
+      <DependentUpon>QuanlydiemDataSet23.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet24.xsc">
+      <DependentUpon>QuanlydiemDataSet24.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet24.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanlydiemDataSet24.Designer.cs</LastGenOutput>
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="QuanlydiemDataSet24.xss">
+      <DependentUpon>QuanlydiemDataSet24.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet25.xsc">
+      <DependentUpon>QuanlydiemDataSet25.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet25.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanlydiemDataSet25.Designer.cs</LastGenOutput>
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="QuanlydiemDataSet25.xss">
+      <DependentUpon>QuanlydiemDataSet25.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet26.xsc">
+      <DependentUpon>QuanlydiemDataSet26.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet26.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanlydiemDataSet26.Designer.cs</LastGenOutput>
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="QuanlydiemDataSet26.xss">
+      <DependentUpon>QuanlydiemDataSet26.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet27.xsc">
+      <DependentUpon>QuanlydiemDataSet27.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet27.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanlydiemDataSet27.Designer.cs</LastGenOutput>
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="QuanlydiemDataSet27.xss">
+      <DependentUpon>QuanlydiemDataSet27.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet28.xsc">
+      <DependentUpon>QuanlydiemDataSet28.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet28.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanlydiemDataSet28.Designer.cs</LastGenOutput>
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="QuanlydiemDataSet28.xss">
+      <DependentUpon>QuanlydiemDataSet28.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet29.xsc">
+      <DependentUpon>QuanlydiemDataSet29.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet29.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanlydiemDataSet29.Designer.cs</LastGenOutput>
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="QuanlydiemDataSet29.xss">
+      <DependentUpon>QuanlydiemDataSet29.xsd</DependentUpon>
+    </None>
+    <None Include="QuanLyDiemDataSet3.xsc">
+      <DependentUpon>QuanLyDiemDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="QuanLyDiemDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanLyDiemDataSet3.Designer.cs</LastGenOutput>
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="QuanLyDiemDataSet3.xss">
+      <DependentUpon>QuanLyDiemDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet30.xsc">
+      <DependentUpon>QuanlydiemDataSet30.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet30.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanlydiemDataSet30.Designer.cs</LastGenOutput>
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="QuanlydiemDataSet30.xss">
+      <DependentUpon>QuanlydiemDataSet30.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet31.xsc">
+      <DependentUpon>QuanlydiemDataSet31.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet31.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanlydiemDataSet31.Designer.cs</LastGenOutput>
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="QuanlydiemDataSet31.xss">
+      <DependentUpon>QuanlydiemDataSet31.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet311.xsc">
+      <DependentUpon>QuanlydiemDataSet311.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet311.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanlydiemDataSet311.Designer.cs</LastGenOutput>
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="QuanlydiemDataSet311.xss">
+      <DependentUpon>QuanlydiemDataSet311.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet32.xsc">
+      <DependentUpon>QuanlydiemDataSet32.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet32.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanlydiemDataSet32.Designer.cs</LastGenOutput>
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="QuanlydiemDataSet32.xss">
+      <DependentUpon>QuanlydiemDataSet32.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet33.xsc">
+      <DependentUpon>QuanlydiemDataSet33.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet33.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanlydiemDataSet33.Designer.cs</LastGenOutput>
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="QuanlydiemDataSet33.xss">
+      <DependentUpon>QuanlydiemDataSet33.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet34.xsc">
+      <DependentUpon>QuanlydiemDataSet34.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet34.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanlydiemDataSet34.Designer.cs</LastGenOutput>
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="QuanlydiemDataSet34.xss">
+      <DependentUpon>QuanlydiemDataSet34.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet35.xsc">
+      <DependentUpon>QuanlydiemDataSet35.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet35.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanlydiemDataSet35.Designer.cs</LastGenOutput>
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="QuanlydiemDataSet35.xss">
+      <DependentUpon>QuanlydiemDataSet35.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet36.xsc">
+      <DependentUpon>QuanlydiemDataSet36.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet36.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanlydiemDataSet36.Designer.cs</LastGenOutput>
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="QuanlydiemDataSet36.xss">
+      <DependentUpon>QuanlydiemDataSet36.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet37.xsc">
+      <DependentUpon>QuanlydiemDataSet37.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet37.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanlydiemDataSet37.Designer.cs</LastGenOutput>
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="QuanlydiemDataSet37.xss">
+      <DependentUpon>QuanlydiemDataSet37.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet38.xsc">
+      <DependentUpon>QuanlydiemDataSet38.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet38.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanlydiemDataSet38.Designer.cs</LastGenOutput>
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="QuanlydiemDataSet38.xss">
+      <DependentUpon>QuanlydiemDataSet38.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet39.xsc">
+      <DependentUpon>QuanlydiemDataSet39.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet39.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanlydiemDataSet39.Designer.cs</LastGenOutput>
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="QuanlydiemDataSet39.xss">
+      <DependentUpon>QuanlydiemDataSet39.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet4.xsc">
+      <DependentUpon>QuanlydiemDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanlydiemDataSet4.Designer.cs</LastGenOutput>
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="QuanlydiemDataSet4.xss">
+      <DependentUpon>QuanlydiemDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet40.xsc">
+      <DependentUpon>QuanlydiemDataSet40.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet40.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanlydiemDataSet40.Designer.cs</LastGenOutput>
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="QuanlydiemDataSet40.xss">
+      <DependentUpon>QuanlydiemDataSet40.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet41.xsc">
+      <DependentUpon>QuanlydiemDataSet41.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet41.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanlydiemDataSet41.Designer.cs</LastGenOutput>
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="QuanlydiemDataSet41.xss">
+      <DependentUpon>QuanlydiemDataSet41.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet42.xsc">
+      <DependentUpon>QuanlydiemDataSet42.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet42.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanlydiemDataSet42.Designer.cs</LastGenOutput>
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="QuanlydiemDataSet42.xss">
+      <DependentUpon>QuanlydiemDataSet42.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet43.xsc">
+      <DependentUpon>QuanlydiemDataSet43.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet43.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanlydiemDataSet43.Designer.cs</LastGenOutput>
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="QuanlydiemDataSet43.xss">
+      <DependentUpon>QuanlydiemDataSet43.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet44.xsc">
+      <DependentUpon>QuanlydiemDataSet44.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet44.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanlydiemDataSet44.Designer.cs</LastGenOutput>
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="QuanlydiemDataSet44.xss">
+      <DependentUpon>QuanlydiemDataSet44.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet45.xsc">
+      <DependentUpon>QuanlydiemDataSet45.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet45.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanlydiemDataSet45.Designer.cs</LastGenOutput>
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="QuanlydiemDataSet45.xss">
+      <DependentUpon>QuanlydiemDataSet45.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet46.xsc">
+      <DependentUpon>QuanlydiemDataSet46.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet46.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanlydiemDataSet46.Designer.cs</LastGenOutput>
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="QuanlydiemDataSet46.xss">
+      <DependentUpon>QuanlydiemDataSet46.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet47.xsc">
+      <DependentUpon>QuanlydiemDataSet47.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet47.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanlydiemDataSet47.Designer.cs</LastGenOutput>
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="QuanlydiemDataSet47.xss">
+      <DependentUpon>QuanlydiemDataSet47.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet48.xsc">
+      <DependentUpon>QuanlydiemDataSet48.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet48.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanlydiemDataSet48.Designer.cs</LastGenOutput>
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="QuanlydiemDataSet48.xss">
+      <DependentUpon>QuanlydiemDataSet48.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet49.xsc">
+      <DependentUpon>QuanlydiemDataSet49.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet49.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanlydiemDataSet49.Designer.cs</LastGenOutput>
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="QuanlydiemDataSet49.xss">
+      <DependentUpon>QuanlydiemDataSet49.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet5.xsc">
+      <DependentUpon>QuanlydiemDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanlydiemDataSet5.Designer.cs</LastGenOutput>
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="QuanlydiemDataSet5.xss">
+      <DependentUpon>QuanlydiemDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet50.xsc">
+      <DependentUpon>QuanlydiemDataSet50.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet50.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanlydiemDataSet50.Designer.cs</LastGenOutput>
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="QuanlydiemDataSet50.xss">
+      <DependentUpon>QuanlydiemDataSet50.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet51.xsc">
+      <DependentUpon>QuanlydiemDataSet51.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet51.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanlydiemDataSet51.Designer.cs</LastGenOutput>
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="QuanlydiemDataSet51.xss">
+      <DependentUpon>QuanlydiemDataSet51.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet52.xsc">
+      <DependentUpon>QuanlydiemDataSet52.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet52.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanlydiemDataSet52.Designer.cs</LastGenOutput>
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="QuanlydiemDataSet52.xss">
+      <DependentUpon>QuanlydiemDataSet52.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet6.xsc">
+      <DependentUpon>QuanlydiemDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanlydiemDataSet6.Designer.cs</LastGenOutput>
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="QuanlydiemDataSet6.xss">
+      <DependentUpon>QuanlydiemDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet7.xsc">
+      <DependentUpon>QuanlydiemDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanlydiemDataSet7.Designer.cs</LastGenOutput>
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="QuanlydiemDataSet7.xss">
+      <DependentUpon>QuanlydiemDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet8.xsc">
+      <DependentUpon>QuanlydiemDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet8.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanlydiemDataSet8.Designer.cs</LastGenOutput>
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="QuanlydiemDataSet8.xss">
+      <DependentUpon>QuanlydiemDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet9.xsc">
+      <DependentUpon>QuanlydiemDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="QuanlydiemDataSet9.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanlydiemDataSet9.Designer.cs</LastGenOutput>
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="QuanlydiemDataSet9.xss">
+      <DependentUpon>QuanlydiemDataSet9.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Sql.Server.Express.9.2">
+      <Visible>False</Visible>
+      <ProductName>SQL Server 2005 Express Edition SP2 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BUS\BUS.csproj">
+      <Project>{21e5c4de-e0b5-486f-bb0f-d882df5cae81}</Project>
+      <Name>BUS</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
