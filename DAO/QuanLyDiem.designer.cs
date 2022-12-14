@@ -33,6 +33,9 @@ namespace DAO
     partial void InserttblGIANG_VIEN(tblGIANG_VIEN instance);
     partial void UpdatetblGIANG_VIEN(tblGIANG_VIEN instance);
     partial void DeletetblGIANG_VIEN(tblGIANG_VIEN instance);
+    partial void InserttblSINH_VIEN(tblSINH_VIEN instance);
+    partial void UpdatetblSINH_VIEN(tblSINH_VIEN instance);
+    partial void DeletetblSINH_VIEN(tblSINH_VIEN instance);
     partial void InserttblKHOA(tblKHOA instance);
     partial void UpdatetblKHOA(tblKHOA instance);
     partial void DeletetblKHOA(tblKHOA instance);
@@ -45,13 +48,10 @@ namespace DAO
     partial void InserttblMON(tblMON instance);
     partial void UpdatetblMON(tblMON instance);
     partial void DeletetblMON(tblMON instance);
-    partial void InserttblSINH_VIEN(tblSINH_VIEN instance);
-    partial void UpdatetblSINH_VIEN(tblSINH_VIEN instance);
-    partial void DeletetblSINH_VIEN(tblSINH_VIEN instance);
     #endregion
 		
 		public QuanLyDiemDataContext() : 
-				base(global::DAO.Properties.Settings.Default.QuanlydiemConnectionString, mappingSource)
+				base(global::DAO.Properties.Settings.Default.QuanlydiemConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -85,6 +85,14 @@ namespace DAO
 			get
 			{
 				return this.GetTable<tblGIANG_VIEN>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tblSINH_VIEN> tblSINH_VIENs
+		{
+			get
+			{
+				return this.GetTable<tblSINH_VIEN>();
 			}
 		}
 		
@@ -141,14 +149,6 @@ namespace DAO
 			get
 			{
 				return this.GetTable<tblMON>();
-			}
-		}
-		
-		public System.Data.Linq.Table<tblSINH_VIEN> tblSINH_VIENs
-		{
-			get
-			{
-				return this.GetTable<tblSINH_VIEN>();
 			}
 		}
 	}
@@ -384,6 +384,229 @@ namespace DAO
 		{
 			this.SendPropertyChanging();
 			entity.tblGIANG_VIEN = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblSINH_VIEN")]
+	public partial class tblSINH_VIEN : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _MaSv;
+		
+		private string _HoTen;
+		
+		private string _NgaySinh;
+		
+		private string _GioiTinh;
+		
+		private string _DiaChi;
+		
+		private string _MaLop;
+		
+		private EntityRef<tblLOP> _tblLOP;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMaSvChanging(string value);
+    partial void OnMaSvChanged();
+    partial void OnHoTenChanging(string value);
+    partial void OnHoTenChanged();
+    partial void OnNgaySinhChanging(string value);
+    partial void OnNgaySinhChanged();
+    partial void OnGioiTinhChanging(string value);
+    partial void OnGioiTinhChanged();
+    partial void OnDiaChiChanging(string value);
+    partial void OnDiaChiChanged();
+    partial void OnMaLopChanging(string value);
+    partial void OnMaLopChanged();
+    #endregion
+		
+		public tblSINH_VIEN()
+		{
+			this._tblLOP = default(EntityRef<tblLOP>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaSv", DbType="NVarChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string MaSv
+		{
+			get
+			{
+				return this._MaSv;
+			}
+			set
+			{
+				if ((this._MaSv != value))
+				{
+					this.OnMaSvChanging(value);
+					this.SendPropertyChanging();
+					this._MaSv = value;
+					this.SendPropertyChanged("MaSv");
+					this.OnMaSvChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HoTen", DbType="NVarChar(50)")]
+		public string HoTen
+		{
+			get
+			{
+				return this._HoTen;
+			}
+			set
+			{
+				if ((this._HoTen != value))
+				{
+					this.OnHoTenChanging(value);
+					this.SendPropertyChanging();
+					this._HoTen = value;
+					this.SendPropertyChanged("HoTen");
+					this.OnHoTenChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgaySinh", DbType="NVarChar(10)")]
+		public string NgaySinh
+		{
+			get
+			{
+				return this._NgaySinh;
+			}
+			set
+			{
+				if ((this._NgaySinh != value))
+				{
+					this.OnNgaySinhChanging(value);
+					this.SendPropertyChanging();
+					this._NgaySinh = value;
+					this.SendPropertyChanged("NgaySinh");
+					this.OnNgaySinhChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GioiTinh", DbType="NVarChar(5)")]
+		public string GioiTinh
+		{
+			get
+			{
+				return this._GioiTinh;
+			}
+			set
+			{
+				if ((this._GioiTinh != value))
+				{
+					this.OnGioiTinhChanging(value);
+					this.SendPropertyChanging();
+					this._GioiTinh = value;
+					this.SendPropertyChanged("GioiTinh");
+					this.OnGioiTinhChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiaChi", DbType="NVarChar(50)")]
+		public string DiaChi
+		{
+			get
+			{
+				return this._DiaChi;
+			}
+			set
+			{
+				if ((this._DiaChi != value))
+				{
+					this.OnDiaChiChanging(value);
+					this.SendPropertyChanging();
+					this._DiaChi = value;
+					this.SendPropertyChanged("DiaChi");
+					this.OnDiaChiChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaLop", DbType="NVarChar(10)")]
+		public string MaLop
+		{
+			get
+			{
+				return this._MaLop;
+			}
+			set
+			{
+				if ((this._MaLop != value))
+				{
+					if (this._tblLOP.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMaLopChanging(value);
+					this.SendPropertyChanging();
+					this._MaLop = value;
+					this.SendPropertyChanged("MaLop");
+					this.OnMaLopChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblLOP_tblSINH_VIEN", Storage="_tblLOP", ThisKey="MaLop", OtherKey="MaLop", IsForeignKey=true)]
+		public tblLOP tblLOP
+		{
+			get
+			{
+				return this._tblLOP.Entity;
+			}
+			set
+			{
+				tblLOP previousValue = this._tblLOP.Entity;
+				if (((previousValue != value) 
+							|| (this._tblLOP.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._tblLOP.Entity = null;
+						previousValue.tblSINH_VIENs.Remove(this);
+					}
+					this._tblLOP.Entity = value;
+					if ((value != null))
+					{
+						value.tblSINH_VIENs.Add(this);
+						this._MaLop = value.MaLop;
+					}
+					else
+					{
+						this._MaLop = default(string);
+					}
+					this.SendPropertyChanged("tblLOP");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 	
@@ -1525,229 +1748,6 @@ namespace DAO
 						this._MaGV = default(string);
 					}
 					this.SendPropertyChanged("tblGIANG_VIEN");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblSINH_VIEN")]
-	public partial class tblSINH_VIEN : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _MaSv;
-		
-		private string _HoTen;
-		
-		private string _NgaySinh;
-		
-		private string _GioiTinh;
-		
-		private string _DiaChi;
-		
-		private string _MaLop;
-		
-		private EntityRef<tblLOP> _tblLOP;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMaSvChanging(string value);
-    partial void OnMaSvChanged();
-    partial void OnHoTenChanging(string value);
-    partial void OnHoTenChanged();
-    partial void OnNgaySinhChanging(string value);
-    partial void OnNgaySinhChanged();
-    partial void OnGioiTinhChanging(string value);
-    partial void OnGioiTinhChanged();
-    partial void OnDiaChiChanging(string value);
-    partial void OnDiaChiChanged();
-    partial void OnMaLopChanging(string value);
-    partial void OnMaLopChanged();
-    #endregion
-		
-		public tblSINH_VIEN()
-		{
-			this._tblLOP = default(EntityRef<tblLOP>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaSv", DbType="NVarChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string MaSv
-		{
-			get
-			{
-				return this._MaSv;
-			}
-			set
-			{
-				if ((this._MaSv != value))
-				{
-					this.OnMaSvChanging(value);
-					this.SendPropertyChanging();
-					this._MaSv = value;
-					this.SendPropertyChanged("MaSv");
-					this.OnMaSvChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HoTen", DbType="NVarChar(50)")]
-		public string HoTen
-		{
-			get
-			{
-				return this._HoTen;
-			}
-			set
-			{
-				if ((this._HoTen != value))
-				{
-					this.OnHoTenChanging(value);
-					this.SendPropertyChanging();
-					this._HoTen = value;
-					this.SendPropertyChanged("HoTen");
-					this.OnHoTenChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgaySinh", DbType="NVarChar(10)")]
-		public string NgaySinh
-		{
-			get
-			{
-				return this._NgaySinh;
-			}
-			set
-			{
-				if ((this._NgaySinh != value))
-				{
-					this.OnNgaySinhChanging(value);
-					this.SendPropertyChanging();
-					this._NgaySinh = value;
-					this.SendPropertyChanged("NgaySinh");
-					this.OnNgaySinhChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GioiTinh", DbType="NVarChar(5)")]
-		public string GioiTinh
-		{
-			get
-			{
-				return this._GioiTinh;
-			}
-			set
-			{
-				if ((this._GioiTinh != value))
-				{
-					this.OnGioiTinhChanging(value);
-					this.SendPropertyChanging();
-					this._GioiTinh = value;
-					this.SendPropertyChanged("GioiTinh");
-					this.OnGioiTinhChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiaChi", DbType="NVarChar(50)")]
-		public string DiaChi
-		{
-			get
-			{
-				return this._DiaChi;
-			}
-			set
-			{
-				if ((this._DiaChi != value))
-				{
-					this.OnDiaChiChanging(value);
-					this.SendPropertyChanging();
-					this._DiaChi = value;
-					this.SendPropertyChanged("DiaChi");
-					this.OnDiaChiChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaLop", DbType="NVarChar(10)")]
-		public string MaLop
-		{
-			get
-			{
-				return this._MaLop;
-			}
-			set
-			{
-				if ((this._MaLop != value))
-				{
-					if (this._tblLOP.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnMaLopChanging(value);
-					this.SendPropertyChanging();
-					this._MaLop = value;
-					this.SendPropertyChanged("MaLop");
-					this.OnMaLopChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblLOP_tblSINH_VIEN", Storage="_tblLOP", ThisKey="MaLop", OtherKey="MaLop", IsForeignKey=true)]
-		public tblLOP tblLOP
-		{
-			get
-			{
-				return this._tblLOP.Entity;
-			}
-			set
-			{
-				tblLOP previousValue = this._tblLOP.Entity;
-				if (((previousValue != value) 
-							|| (this._tblLOP.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._tblLOP.Entity = null;
-						previousValue.tblSINH_VIENs.Remove(this);
-					}
-					this._tblLOP.Entity = value;
-					if ((value != null))
-					{
-						value.tblSINH_VIENs.Add(this);
-						this._MaLop = value.MaLop;
-					}
-					else
-					{
-						this._MaLop = default(string);
-					}
-					this.SendPropertyChanged("tblLOP");
 				}
 			}
 		}

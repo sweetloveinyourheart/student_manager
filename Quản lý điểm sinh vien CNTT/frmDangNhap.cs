@@ -9,7 +9,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Data.Sql;
 using System.Diagnostics;
-
+using BUS;
 
 namespace Quản_lý_điểm_sinh_vien_CNTT
 {
@@ -26,37 +26,19 @@ namespace Quản_lý_điểm_sinh_vien_CNTT
         }
 
         private void btnDangNhap_Click(object sender, EventArgs e)
-        { 
-            
-
-            string select = "Select * From tbllogin where tendn='" + txtTenDN.Text + "' and matkhau='" + txtMatKhau.Text + "' and Quyen='Admin'";
-            SqlCommand cmd = new SqlCommand(select, conn);
-            SqlDataReader reader;
-            reader = cmd.ExecuteReader();
-            if (reader.Read())
+        {
+            if (LoginBUS.Instance.KiemTraAdmin(txtTenDN, txtMatKhau))
             {
                 MessageBox.Show("Đăng nhập vào hệ thống !", "Thông báo !");
                 frmMain frm = new frmMain();
                 frm.Show();
                 frm.mnuDN.Enabled = false;
                 this.Hide();
-                
-                cmd.Dispose();
-                reader.Close();
-                reader.Dispose();
             }
-            //Download source code tại Sharecode.vn
+
             else
             {
-                cmd.Dispose();
-                reader.Close();
-                reader.Dispose();
-                string select1 = "Select * From tbllogin where TenDN='" + txtTenDN.Text + "' and matkhau='" + txtMatKhau.Text + "' and Quyen='Member'";
-                SqlCommand cmd1 = new SqlCommand(select1, conn);
-                SqlDataReader reader1;
-                reader1 = cmd1.ExecuteReader();
-
-                if (reader1.Read())
+                if (LoginBUS.Instance.KiemTraMember(txtTenDN, txtMatKhau))
                 {
                     MessageBox.Show("Đăng nhập vào hệ thống !", "Thông báo !");
 
@@ -94,9 +76,6 @@ namespace Quản_lý_điểm_sinh_vien_CNTT
                     MessageBox.Show("Tên đăng nhập hoặc mật khẩu sai !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
  
                 }
-                cmd1.Dispose();
-                reader1.Close();
-                reader1.Dispose();
 
             }
             
@@ -117,7 +96,6 @@ namespace Quản_lý_điểm_sinh_vien_CNTT
             if (conn.State == ConnectionState.Open)
             cboName.Items.Add(SystemInformation.UserDomainName.ToString() + "\\SQLServer");
             cboName.Text = cboName.Items[0].ToString();
-            string select = "select*from sys.servers";
         }
 
         private void cboName_SelectedIndexChanged(object sender, EventArgs e)

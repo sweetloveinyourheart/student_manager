@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,30 @@ namespace DAO
 
         QuanLyDiemDataContext db = new QuanLyDiemDataContext();
 
+        public bool KiemTraAdmin(
+            string tendn,
+            string matkhau
+            )
+        {
+            tblLOGIN admin = db.tblLOGINs.Select(s => s).Where(eq => eq.TenDN == tendn && eq.MatKhau == matkhau && eq.Quyen == "Admin").FirstOrDefault();
+            if (admin != null)
+            {
+                return true;
+            }
+            return false;
+        }
 
+        public bool KiemTraMember(
+            string tendn,
+            string matkhau
+    )
+        {
+            tblLOGIN member = db.tblLOGINs.Select(s => s).Where(eq => eq.TenDN == tendn && eq.MatKhau == matkhau && eq.Quyen == "Member").FirstOrDefault();
+            if (member != null)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }
