@@ -36,6 +36,8 @@ namespace DAO
                 s.MaLop
                 )
             ).ToList();
+
+            Console.WriteLine("abc");
             
             return list;
         }
