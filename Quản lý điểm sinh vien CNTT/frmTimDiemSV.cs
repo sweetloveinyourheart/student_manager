@@ -25,7 +25,7 @@ namespace Quản_lý_điểm_sinh_vien_CNTT
             this.tblKET_QUATableAdapter.Fill(this.quanlydiemDataSet49.tblKET_QUA);
 
             conn = cc.Connected();
-            if (conn.State == ConnectionState.Open) ;
+            if (conn.State == ConnectionState.Open);
 
             //Add du lieu vao cboKhoaHoc
             string select = "Select MaKhoa from tblKHOA ";
@@ -33,7 +33,6 @@ namespace Quản_lý_điểm_sinh_vien_CNTT
             SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-
                 cboKhoa.Items.Add(reader.GetString(0));
             }
             reader.Dispose();
