@@ -42,6 +42,27 @@ namespace DAO
             return list;
         }
 
+        public List<SinhVien> FindSvByMaLop(string malop)
+        {
+            List<SinhVien> list = new List<SinhVien>();
+
+            list = db.tblSINH_VIENs
+                .Where(eq => eq.MaLop == malop)
+                .Select(s => new SinhVien(
+                    s.MaSv,
+                    s.HoTen,
+                    s.NgaySinh,
+                    s.GioiTinh,
+                    s.DiaChi,
+                    s.MaLop
+                )
+            ).ToList();
+
+            Console.WriteLine("abc");
+
+            return list;
+        }
+
         public bool ThemSV(
             string masv,
             string hoten,
@@ -82,7 +103,7 @@ namespace DAO
             string malop
             )
         {
-            tblSINH_VIEN sv = db.tblSINH_VIENs.Select(s => s).Where(eq => eq.MaSv == masv).FirstOrDefault();
+            tblSINH_VIEN sv = db.tblSINH_VIENs.Where(eq => eq.MaSv == masv).Select(s => s).FirstOrDefault();
             if (sv == null)
             {
                 return false;

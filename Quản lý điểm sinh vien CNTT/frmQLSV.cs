@@ -15,8 +15,6 @@ namespace Quản_lý_điểm_sinh_vien_CNTT
 {
     public partial class frmQLSV : Form
     {
-        private CommonConnect cc = new CommonConnect();
-        SqlConnection conn = null;
         public frmQLSV()
         {
             InitializeComponent();
@@ -24,32 +22,13 @@ namespace Quản_lý_điểm_sinh_vien_CNTT
 
         private void frmQLSV_Load(object sender, EventArgs e)
         {
-            conn=cc.Connected();
-            if (conn.State == ConnectionState.Open) ;
-            //Add du lieu vao cboKhoa
-            string select = "Select MaKhoa from tblKHOA ";
-            SqlCommand cmd = new SqlCommand(select, conn);
-            SqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
-            {
-                
-                cboKhoahoc.Items.Add(reader.GetString(0));
-            }
-            reader.Dispose();
-            cmd.Dispose();
 
+            //Add du lieu vao cboKhoa
+            KhoaBUS.Instance.FillKhoaList(cboKhoahoc);
 
             //Add du lieu vao MaLop
-            string selects = "Select MaLop from tblLOP";
-            SqlCommand cmd1 = new SqlCommand(selects, conn);
-            SqlDataReader reader1 = cmd1.ExecuteReader();
-            while (reader1.Read())
-            {
+            LopBUS.Instance.FillLopList(cboLop);
 
-                cboMalop.Items.Add(reader1.GetString(0));
-            }
-            reader1.Dispose();
-            cmd1.Dispose();
             //Load lai du lieu
             FillDataGridView_SV();
             
@@ -113,44 +92,14 @@ namespace Quản_lý_điểm_sinh_vien_CNTT
 
         private void cboKhoahoc_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cboLop.Items.Clear();
-            string select = "Select MaLop from tblLOP where MaKhoa='" + cboKhoahoc.Text + "'";
-            SqlCommand cmd = new SqlCommand(select, conn);
-            SqlDataReader reader = cmd.ExecuteReader();
-            //Add vao cboLop
-            while (reader.Read())
-            {
-                
-                cboLop.Items.Add(reader.GetString(0));
-            }
-            //Tra tai nguyen 
-            reader.Dispose();
-            cmd.Dispose();
-            
-
+           LopBUS.Instance.FillLopListMaKhoa(cboKhoahoc, cboLop);
         }
 
         private void cboLop_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Thực hiện truy vấn
-            string select = "Select * From tblSINH_VIEN  where MaLop='"+ cboLop.Text +"'";
-            SqlCommand cmd = new SqlCommand(select, conn);
-
-            // Tạo đối tượng DataSet
-            DataSet ds = new DataSet();
-
-            // Tạo đối tượng điều hợp
-            SqlDataAdapter adapter = new SqlDataAdapter();
-            adapter.SelectCommand = cmd;
-
-            // Fill dữ liệu từ adapter vào DataSet
-            adapter.Fill(ds, "SINHVIEN");
 
             // Đưa ra DataGridView
-            dgrDSSV.DataSource = ds;
-            dgrDSSV.DataMember = "SINHVIEN";
-
-            cmd.Dispose();
+            SinhVienBUS.Instance.FillSinhVienListByMaLop(dgrDSSV, cboLop);
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

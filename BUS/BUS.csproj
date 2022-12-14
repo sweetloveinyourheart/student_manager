@@ -55,6 +55,7 @@
     <Compile Include="KetQuaBUS.cs" />
     <Compile Include="KhoaBUS.cs" />
     <Compile Include="LoginBUS.cs" />
+    <Compile Include="LopBUS.cs" />
     <Compile Include="MonHocBUS.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

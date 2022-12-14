@@ -30,6 +30,12 @@ namespace BUS
             dgrDSSV.DataSource = SinhVienDAO.Instance.FormLoad();
         }
 
+        public void FillSinhVienListByMaLop(DataGridView dgrDSSV, ComboBox cboLop)
+        {
+            // Đưa ra DataGridView
+            dgrDSSV.DataSource = SinhVienDAO.Instance.FindSvByMaLop(cboLop.Text);
+        }
+
         public void ThemSinhVien(
             ErrorProvider errorProvider1,
             TextBox txtMaSV,
