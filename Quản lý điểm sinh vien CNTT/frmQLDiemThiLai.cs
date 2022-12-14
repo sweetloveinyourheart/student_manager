@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Data.Sql;
 using System.Diagnostics;
+using BUS;
 
 namespace Quản_lý_điểm_sinh_vien_CNTT
 {
@@ -33,20 +34,7 @@ namespace Quản_lý_điểm_sinh_vien_CNTT
 
         private void cboKhoaHoc_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cboLop.Items.Clear();
-            cboLop.Text = "";
-            string select = "Select MaLop from tblLOP where  MaKhoa='" + cboKhoaHoc.Text + "'";
-            SqlCommand cmd = new SqlCommand(select, conn);
-            SqlDataReader reader = cmd.ExecuteReader();
-            //Add vao cboLop
-            while (reader.Read())
-            {
-
-                cboLop.Items.Add(reader.GetString(0));
-            }
-            //Tra tai nguyen 
-            reader.Dispose();
-            cmd.Dispose();
+            LopBUS.Instance.FillLopListMaKhoa(cboKhoaHoc, cboLop);
         }
 
         private void frmQLDiem_Load(object sender, EventArgs e)
