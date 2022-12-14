@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAO
+namespace BUS
 {
-    internal class MonDAO
+    internal class MonHocBUS
     {
     }
 }
