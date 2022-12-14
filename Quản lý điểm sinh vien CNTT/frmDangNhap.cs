@@ -115,9 +115,8 @@ namespace Quản_lý_điểm_sinh_vien_CNTT
             // Mở kết nối
             conn = cc.Connected();
             if (conn.State == ConnectionState.Open)
-            cboName.Items.Add(SystemInformation.UserDomainName.ToString() + "\\SQLServer");
+                cboName.Items.Add(SystemInformation.UserDomainName.ToString() + "\\SQLServer");
             cboName.Text = cboName.Items[0].ToString();
-            string select = "select*from sys.servers";
         }
 
         private void cboName_SelectedIndexChanged(object sender, EventArgs e)
