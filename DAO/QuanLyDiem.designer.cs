@@ -51,7 +51,7 @@ namespace DAO
     #endregion
 		
 		public QuanLyDiemDataContext() : 
-				base(global::DAO.Properties.Settings.Default.QuanlydiemConnectionString1, mappingSource)
+				base(global::DAO.Properties.Settings.Default.QuanlydiemConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -1063,6 +1063,8 @@ namespace DAO
 		
 		private EntitySet<tblLOP> _tblLOPs;
 		
+		private EntitySet<tblMON> _tblMONs;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -1076,6 +1078,7 @@ namespace DAO
 		public tblKHOA()
 		{
 			this._tblLOPs = new EntitySet<tblLOP>(new Action<tblLOP>(this.attach_tblLOPs), new Action<tblLOP>(this.detach_tblLOPs));
+			this._tblMONs = new EntitySet<tblMON>(new Action<tblMON>(this.attach_tblMONs), new Action<tblMON>(this.detach_tblMONs));
 			OnCreated();
 		}
 		
@@ -1132,6 +1135,19 @@ namespace DAO
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblKHOA_tblMON", Storage="_tblMONs", ThisKey="MaKhoa", OtherKey="MaKhoa")]
+		public EntitySet<tblMON> tblMONs
+		{
+			get
+			{
+				return this._tblMONs;
+			}
+			set
+			{
+				this._tblMONs.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -1159,6 +1175,18 @@ namespace DAO
 		}
 		
 		private void detach_tblLOPs(tblLOP entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblKHOA = null;
+		}
+		
+		private void attach_tblMONs(tblMON entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblKHOA = this;
+		}
+		
+		private void detach_tblMONs(tblMON entity)
 		{
 			this.SendPropertyChanging();
 			entity.tblKHOA = null;
@@ -1570,6 +1598,8 @@ namespace DAO
 		
 		private EntityRef<tblGIANG_VIEN> _tblGIANG_VIEN;
 		
+		private EntityRef<tblKHOA> _tblKHOA;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -1591,6 +1621,7 @@ namespace DAO
 		public tblMON()
 		{
 			this._tblGIANG_VIEN = default(EntityRef<tblGIANG_VIEN>);
+			this._tblKHOA = default(EntityRef<tblKHOA>);
 			OnCreated();
 		}
 		
@@ -1698,7 +1729,7 @@ namespace DAO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaKhoa", DbType="NChar(10)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaKhoa", DbType="NVarChar(10)")]
 		public string MaKhoa
 		{
 			get
@@ -1709,6 +1740,10 @@ namespace DAO
 			{
 				if ((this._MaKhoa != value))
 				{
+					if (this._tblKHOA.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnMaKhoaChanging(value);
 					this.SendPropertyChanging();
 					this._MaKhoa = value;
@@ -1748,6 +1783,40 @@ namespace DAO
 						this._MaGV = default(string);
 					}
 					this.SendPropertyChanged("tblGIANG_VIEN");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblKHOA_tblMON", Storage="_tblKHOA", ThisKey="MaKhoa", OtherKey="MaKhoa", IsForeignKey=true)]
+		public tblKHOA tblKHOA
+		{
+			get
+			{
+				return this._tblKHOA.Entity;
+			}
+			set
+			{
+				tblKHOA previousValue = this._tblKHOA.Entity;
+				if (((previousValue != value) 
+							|| (this._tblKHOA.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._tblKHOA.Entity = null;
+						previousValue.tblMONs.Remove(this);
+					}
+					this._tblKHOA.Entity = value;
+					if ((value != null))
+					{
+						value.tblMONs.Add(this);
+						this._MaKhoa = value.MaKhoa;
+					}
+					else
+					{
+						this._MaKhoa = default(string);
+					}
+					this.SendPropertyChanged("tblKHOA");
 				}
 			}
 		}

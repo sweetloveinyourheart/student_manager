@@ -30,7 +30,7 @@ namespace DTO
 
         private string makhoa;
 
-        public string Makhoa { get { return makhoa; } set { makhoa = value; } }
+        public string MaKhoa { get { return makhoa; } set { makhoa = value; } }
 
         public MonHoc()
         {

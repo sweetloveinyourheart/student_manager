@@ -22,16 +22,9 @@ namespace Quản_lý_điểm_sinh_vien_CNTT
 
         private void frmTimDiemSV_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'quanlydiemDataSet49.tblKET_QUA' table. You can move, or remove it, as needed.
-            this.tblKET_QUATableAdapter.Fill(this.quanlydiemDataSet49.tblKET_QUA);
-
-            conn = cc.Connected();
-            if (conn.State == ConnectionState.Open);
+            KetQuaBUS.Instance.FillSinhVienList(dgrDIEMSV);
 
             KhoaBUS.Instance.FillKhoaList(cboKhoa);
-
-
-            
 
         }
 
@@ -42,25 +35,8 @@ namespace Quản_lý_điểm_sinh_vien_CNTT
 
         private void button1_Click(object sender, EventArgs e)
         {
-                string select = "Select * From tblKET_QUA  where MaSV='" + txtMaSV.Text + "' and MaMon=N'" + cboMonHoc.Text + "'";
-                SqlCommand cmd = new SqlCommand(select, conn);
+            KetQuaBUS.Instance.FillKQListByMSV(dgrDIEMSV, txtMaSV, cboMonHoc);
 
-                // Tạo đối tượng DataSet
-                DataSet ds = new DataSet();
-
-                // Tạo đối tượng điều hợp
-                SqlDataAdapter adapter = new SqlDataAdapter();
-                adapter.SelectCommand = cmd;
-
-                // Fill dữ liệu từ adapter vào DataSet
-                adapter.Fill(ds, "SINHVIEN");
-
-                // Đưa ra DataGridView
-                dgrDIEMSV.DataSource = ds;
-                dgrDIEMSV.DataMember = "SINHVIEN";
-
-                cmd.Dispose();
-         
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -75,18 +51,7 @@ namespace Quản_lý_điểm_sinh_vien_CNTT
 
         private void cboKhoa_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string select = "Select MaMon from tblMON where MaKhoa='"+ cboKhoa.Text +"'";
-            SqlCommand cmd = new SqlCommand(select, conn);
-            SqlDataReader reader = cmd.ExecuteReader();
-            //Add vao cboLop
-            while (reader.Read())
-            {
-
-                cboMonHoc.Items.Add(reader.GetString(0));
-            }
-            //Tra tai nguyen 
-            reader.Dispose();
-            cmd.Dispose();
+            MonHocBUS.Instance.FillCBByMaKhoa(cboKhoa, cboMonHoc);
         }
     }
 }

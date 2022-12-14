@@ -41,5 +41,14 @@ namespace DAO
             return list;
         }
 
+        public List<tblMON> CBLoadByName(string makhoa)
+        {
+            List<tblMON> list = new List<tblMON>();
+
+            list = db.tblMONs.Select(s => s).Where(eq => eq.MaKhoa == makhoa).ToList();
+
+            return list;
+        }
+
     }
 }

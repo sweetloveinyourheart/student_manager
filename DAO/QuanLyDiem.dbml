@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Quanlydiem" Class="QuanLyDiemDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=LIL-PC\SQLEXPRESS;Initial Catalog=Quanlydiem;Integrated Security=True" SettingsObjectName="DAO.Properties.Settings" SettingsPropertyName="QuanlydiemConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=ThanhDat\EXPRESS;Initial Catalog=Quanlydiem;Integrated Security=True" SettingsObjectName="DAO.Properties.Settings" SettingsPropertyName="QuanlydiemConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.tblGIANG_VIEN" Member="tblGIANG_VIENs">
     <Type Name="tblGIANG_VIEN">
       <Column Name="MaGV" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -67,6 +67,7 @@
       <Column Name="MaKhoa" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="TenKhoa" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Association Name="tblKHOA_tblLOP" Member="tblLOPs" ThisKey="MaKhoa" OtherKey="MaKhoa" Type="tblLOP" />
+      <Association Name="tblKHOA_tblMON" Member="tblMONs" ThisKey="MaKhoa" OtherKey="MaKhoa" Type="tblMON" />
     </Type>
   </Table>
   <Table Name="dbo.tblLOGIN" Member="tblLOGINs">
@@ -97,9 +98,10 @@
       <Column Name="SoDVHT" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="MaGV" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
       <Column Name="HocKi" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
-      <Column Name="MaKhoa" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="MaKhoa" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
       <Association Name="tblMON_tblKET_QUA" Member="tblKET_QUAs" ThisKey="MaMon" OtherKey="MaMon" Type="tblKET_QUA" />
       <Association Name="tblGIANG_VIEN_tblMON" Member="tblGIANG_VIEN" ThisKey="MaGV" OtherKey="MaGV" Type="tblGIANG_VIEN" IsForeignKey="true" />
+      <Association Name="tblKHOA_tblMON" Member="tblKHOA" ThisKey="MaKhoa" OtherKey="MaKhoa" Type="tblKHOA" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>
