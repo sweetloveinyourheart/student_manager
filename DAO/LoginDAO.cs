@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -65,6 +66,48 @@ namespace DAO
                 return true;
             }
             return false;
+        }
+
+        public bool isValidAccount(
+            string tendn,
+            string matkhau
+            )
+        {
+            tblLOGIN isvalid = db.tblLOGINs.Select(s => s).Where(eq => eq.TenDN == tendn && eq.MatKhau == matkhau).FirstOrDefault();
+            if (isvalid != null)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public bool UpdateUser(
+           string accountName,
+           string newPassowrd,
+           string oldPassword,
+           string role
+           )
+        {
+            tblLOGIN user = db.tblLOGINs
+                .Where(eq => eq.TenDN == accountName)
+                .Select(s => s)
+                .FirstOrDefault();
+            tblLOGIN checkOldPassword = db.tblLOGINs.Where(eq => eq.MatKhau == oldPassword).Select(s => s).FirstOrDefault();
+            if (user == null)
+            {
+                return false;
+            }
+            else if (checkOldPassword == null)
+            {
+                return false;
+            }
+            user.TenDN = accountName;
+            user.MatKhau = newPassowrd;
+            user.Quyen = role;
+
+            db.SubmitChanges();
+
+            return true;
         }
 
         public bool ThemNguoiDung(

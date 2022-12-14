@@ -49,6 +49,61 @@ namespace BUS
             return kiemtramember;
         }
 
+        public bool isValidAccount(
+            TextBox txtAccount,
+            TextBox txtOldPass
+            )
+        {
+            bool isvalid = LoginDAO.Instance.isValidAccount(txtAccount.Text, txtOldPass.Text);
+            return isvalid;
+        }
+
+        public bool UpdateUser(
+            ErrorProvider error,
+            TextBox txtAccount,
+            TextBox txtOldPassword,
+            TextBox txtNewPassword,
+            TextBox txtConfirmPassword,
+            ComboBox cbRole
+            )
+        {
+            error.Clear();
+            if (txtAccount.Text == "")
+            {
+                error.SetError(txtAccount, "Tên tài khoản không  để trống !");
+                txtAccount.Focus();
+                return false;
+            }
+            else if (txtOldPassword.Text == "")
+            {
+                error.SetError(txtOldPassword, "Bạn chưa nhập mật khẩu cũ!");
+                txtOldPassword.Focus();
+                return false;
+            }
+            else if (txtNewPassword.Text == "")
+            {
+                error.SetError(txtNewPassword, "Bạn chưa nhập mật khẩu !");
+                txtNewPassword.Focus();
+                return false;
+            }
+            else if (txtNewPassword.Text != txtConfirmPassword.Text)
+            {
+                MessageBox.Show("Bạn nhập lại mật khẩu không trùng khớp", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            else if (!LoginDAO.Instance.isValidAccount(txtAccount.Text, txtOldPassword.Text))
+            {
+                error.SetError(txtAccount, "Tài khoản không tồn tại!");
+                return false;
+            }
+            else
+            {
+                LoginDAO.Instance.UpdateUser(txtAccount.Text, txtNewPassword.Text, txtOldPassword.Text, cbRole.Text);
+                MessageBox.Show("Cập nhật thành công", "Thông báo", MessageBoxButtons.OK);
+                return true;
+            }
+
+        }
         public void ThemNguoiDung(
             ErrorProvider errorProvider1,
             TextBox txtTaikhoan,

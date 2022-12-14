@@ -2,121 +2,121 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.375, 10.875" name="QuanLyDiem">
   <DataContextMoniker Name="/QuanLyDiemDataContext" />
   <nestedChildShapes>
-    <classShape Id="b3ba261e-6d1f-4712-ae90-070d7f61d897" absoluteBounds="0.75, 2.875, 2, 2.1554996744791666">
+    <classShape Id="b226d97a-3907-4d97-878f-de8888bfffd6" absoluteBounds="0.75, 2.875, 2, 2.1554996744791666">
       <DataClassMoniker Name="/QuanLyDiemDataContext/tblGIANG_VIEN" />
       <nestedChildShapes>
-        <elementListCompartment Id="2d736c2e-5213-428e-ac69-a80764f837f3" absoluteBounds="0.765, 3.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="e92c82d1-58ef-4b17-9f02-049056d67983" absoluteBounds="0.765, 3.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="5df8fd9d-bb86-4ecb-b20c-c3e18563e975" absoluteBounds="6.25, 3.25, 2, 1.9631982421875005">
+    <classShape Id="56bbb09c-9dc3-46be-b05b-555d7db96414" absoluteBounds="6.25, 3.25, 2, 1.9631982421875005">
       <DataClassMoniker Name="/QuanLyDiemDataContext/tblSINH_VIEN" />
       <nestedChildShapes>
-        <elementListCompartment Id="cb882f5e-3056-4af3-a75b-f09f28cc143a" absoluteBounds="6.265, 3.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="fe1c0b30-dcbb-4936-a6d4-fa08e066d872" absoluteBounds="6.265, 3.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="64b42a14-0e29-4c01-8e5b-565823c8500e" absoluteBounds="9, 4, 2, 2.9247054036458326">
+    <classShape Id="f96c712f-572c-4a6a-b19d-0b71933f1423" absoluteBounds="9, 4, 2, 2.9247054036458326">
       <DataClassMoniker Name="/QuanLyDiemDataContext/tblKET_QUA" />
       <nestedChildShapes>
-        <elementListCompartment Id="601a1c9d-6e79-463c-9bea-ad2a58600b73" absoluteBounds="9.015, 4.46, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="edd3b902-0ecb-46a4-baed-8cecc435419b" absoluteBounds="9.015, 4.46, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="01daa9d1-54de-4a96-ae5b-4c1333fbb824" absoluteBounds="6.25, 5.875, 2, 1.9631982421875005">
-      <DataClassMoniker Name="/QuanLyDiemDataContext/tblKET_QUA3" />
-      <nestedChildShapes>
-        <elementListCompartment Id="41da8c5e-55ee-48b4-bf08-093f5aec5aec" absoluteBounds="6.265, 6.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="efbe4cba-70b3-4c81-8264-ba472ea5b934" absoluteBounds="6.25, 8.625, 2, 1.9631982421874987">
+    <classShape Id="c988082a-0476-4b15-a16a-b938817f0a0a" absoluteBounds="6.25, 5.875, 2, 1.9631982421875005">
       <DataClassMoniker Name="/QuanLyDiemDataContext/tblKET_QUA2" />
       <nestedChildShapes>
-        <elementListCompartment Id="57a6e0fc-2457-4d27-ae29-a20f3e85a712" absoluteBounds="6.265, 9.085, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="f386e458-1da9-4849-929d-21facb999db1" absoluteBounds="6.265, 6.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="ae24847b-5854-4057-86fd-46c6b94ee3d6" absoluteBounds="0.75, 6.375, 2, 1.1939925130208344">
+    <classShape Id="3c8d493e-cb9b-4586-aadd-4ae5fcd01a57" absoluteBounds="6.25, 8.625, 2, 1.9631982421874987">
+      <DataClassMoniker Name="/QuanLyDiemDataContext/tblKET_QUA3" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3ef250a4-a88e-4c9f-84f8-4072f84a2cef" absoluteBounds="6.265, 9.085, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fba8d04f-74e4-451a-b14a-519cd5f6eb68" absoluteBounds="0.75, 6.375, 2, 1.1939925130208344">
       <DataClassMoniker Name="/QuanLyDiemDataContext/tblKHOA" />
       <nestedChildShapes>
-        <elementListCompartment Id="ecc524ec-8ac4-4054-845a-e3eb00fbb30e" absoluteBounds="0.765, 6.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="5178b3ee-6439-40fd-9992-125a28a23e77" absoluteBounds="0.765, 6.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="94192a2c-185d-4e75-8ac7-e5fe8cf7f88c" absoluteBounds="8.75, 0.75, 2, 2.1554996744791666">
+    <classShape Id="9ca28234-2a08-4e2b-b925-6e4d5da93f57" absoluteBounds="8.75, 0.75, 2, 2.1554996744791666">
       <DataClassMoniker Name="/QuanLyDiemDataContext/tblLOGIN" />
       <nestedChildShapes>
-        <elementListCompartment Id="04c21dc4-5dc3-4325-b301-a995d658b992" absoluteBounds="8.765, 1.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="d063794f-7f60-416e-9e63-6103b55f004d" absoluteBounds="8.765, 1.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="e4cf2a7b-3a94-4396-92a5-a619b1898227" absoluteBounds="3.5, 6.25, 2, 1.3862939453125005">
+    <classShape Id="74e33479-f04f-4ba2-8085-9f4e198e62a3" absoluteBounds="3.5, 6.25, 2, 1.3862939453125005">
       <DataClassMoniker Name="/QuanLyDiemDataContext/tblLOP" />
       <nestedChildShapes>
-        <elementListCompartment Id="e57be331-0761-4fdf-86a1-d98f6eb5475f" absoluteBounds="3.515, 6.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="b0b17700-abdd-48bf-975a-99b85f1d9af0" absoluteBounds="3.515, 6.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="32d0a92f-df8c-445a-8058-fc404800cc3b" absoluteBounds="3.5, 2.875, 2, 1.9631982421875005">
+    <classShape Id="430c074c-c3e5-4295-aafe-2209144d7abb" absoluteBounds="3.5, 2.875, 2, 1.9631982421875005">
       <DataClassMoniker Name="/QuanLyDiemDataContext/tblMON" />
       <nestedChildShapes>
-        <elementListCompartment Id="956ee040-b5de-4bae-a25d-d979a19f9c49" absoluteBounds="3.515, 3.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="47f00175-a010-40c9-a310-65429f0595b9" absoluteBounds="3.515, 3.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <associationConnector edgePoints="[(8.25 : 4.60659912109375); (9 : 4.60659912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/QuanLyDiemDataContext/tblSINH_VIEN/tblSINH_VIEN_tblKET_QUA" />
       <nodes>
-        <classShapeMoniker Id="5df8fd9d-bb86-4ecb-b20c-c3e18563e975" />
-        <classShapeMoniker Id="64b42a14-0e29-4c01-8e5b-565823c8500e" />
+        <classShapeMoniker Id="56bbb09c-9dc3-46be-b05b-555d7db96414" />
+        <classShapeMoniker Id="f96c712f-572c-4a6a-b19d-0b71933f1423" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(5.5 : 6.25); (5.875 : 5.875); (5.875 : 4.23159912109375); (6.25 : 4.23159912109375)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/QuanLyDiemDataContext/tblLOP/tblLOP_tblSINH_VIEN" />
       <nodes>
-        <classShapeMoniker Id="e4cf2a7b-3a94-4396-92a5-a619b1898227" />
-        <classShapeMoniker Id="5df8fd9d-bb86-4ecb-b20c-c3e18563e975" />
+        <classShapeMoniker Id="74e33479-f04f-4ba2-8085-9f4e198e62a3" />
+        <classShapeMoniker Id="56bbb09c-9dc3-46be-b05b-555d7db96414" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(4.468748 : 6.25); (4.468748 : 5.46235270182292); (5.79166666666667 : 5.46235270182292 : JumpStart); (5.95833333333333 : 5.46235270182292 : JumpEnd); (9 : 5.46235270182292)]" fixedFrom="Algorithm" fixedTo="NotFixed">
       <AssociationMoniker Name="/QuanLyDiemDataContext/tblLOP/tblLOP_tblKET_QUA" />
       <nodes>
-        <classShapeMoniker Id="e4cf2a7b-3a94-4396-92a5-a619b1898227" />
-        <classShapeMoniker Id="64b42a14-0e29-4c01-8e5b-565823c8500e" />
+        <classShapeMoniker Id="74e33479-f04f-4ba2-8085-9f4e198e62a3" />
+        <classShapeMoniker Id="f96c712f-572c-4a6a-b19d-0b71933f1423" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(5.5 : 6.97439947265625); (6.25 : 6.97439947265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/QuanLyDiemDataContext/tblLOP/tblLOP_tblKET_QUA3" />
+      <AssociationMoniker Name="/QuanLyDiemDataContext/tblLOP/tblLOP_tblKET_QUA2" />
       <nodes>
-        <classShapeMoniker Id="e4cf2a7b-3a94-4396-92a5-a619b1898227" />
-        <classShapeMoniker Id="01daa9d1-54de-4a96-ae5b-4c1333fbb824" />
+        <classShapeMoniker Id="74e33479-f04f-4ba2-8085-9f4e198e62a3" />
+        <classShapeMoniker Id="c988082a-0476-4b15-a16a-b938817f0a0a" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(4.5 : 7.6362939453125); (4.5 : 9.60659912109375); (6.25 : 9.60659912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/QuanLyDiemDataContext/tblLOP/tblLOP_tblKET_QUA2" />
+      <AssociationMoniker Name="/QuanLyDiemDataContext/tblLOP/tblLOP_tblKET_QUA3" />
       <nodes>
-        <classShapeMoniker Id="e4cf2a7b-3a94-4396-92a5-a619b1898227" />
-        <classShapeMoniker Id="efbe4cba-70b3-4c81-8264-ba472ea5b934" />
+        <classShapeMoniker Id="74e33479-f04f-4ba2-8085-9f4e198e62a3" />
+        <classShapeMoniker Id="3c8d493e-cb9b-4586-aadd-4ae5fcd01a57" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(2.75 : 6.97199625651042); (3.5 : 6.97199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/QuanLyDiemDataContext/tblKHOA/tblKHOA_tblLOP" />
       <nodes>
-        <classShapeMoniker Id="ae24847b-5854-4057-86fd-46c6b94ee3d6" />
-        <classShapeMoniker Id="e4cf2a7b-3a94-4396-92a5-a619b1898227" />
+        <classShapeMoniker Id="fba8d04f-74e4-451a-b14a-519cd5f6eb68" />
+        <classShapeMoniker Id="74e33479-f04f-4ba2-8085-9f4e198e62a3" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(5.5 : 3.07774983723958); (10.90625 : 3.07774983723958); (10.90625 : 4)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/QuanLyDiemDataContext/tblMON/tblMON_tblKET_QUA" />
       <nodes>
-        <classShapeMoniker Id="32d0a92f-df8c-445a-8058-fc404800cc3b" />
-        <classShapeMoniker Id="64b42a14-0e29-4c01-8e5b-565823c8500e" />
+        <classShapeMoniker Id="430c074c-c3e5-4295-aafe-2209144d7abb" />
+        <classShapeMoniker Id="f96c712f-572c-4a6a-b19d-0b71933f1423" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(2.75 : 3.85659912109375); (3.5 : 3.85659912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/QuanLyDiemDataContext/tblGIANG_VIEN/tblGIANG_VIEN_tblMON" />
       <nodes>
-        <classShapeMoniker Id="b3ba261e-6d1f-4712-ae90-070d7f61d897" />
-        <classShapeMoniker Id="32d0a92f-df8c-445a-8058-fc404800cc3b" />
+        <classShapeMoniker Id="b226d97a-3907-4d97-878f-de8888bfffd6" />
+        <classShapeMoniker Id="430c074c-c3e5-4295-aafe-2209144d7abb" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(2.75 : 6.37591745577925); (3.125 : 6.00091745577925); (3.125 : 4.37865068164063); (3.5 : 4.37865068164063)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/QuanLyDiemDataContext/tblKHOA/tblKHOA_tblMON" />
       <nodes>
-        <classShapeMoniker Id="ae24847b-5854-4057-86fd-46c6b94ee3d6" />
-        <classShapeMoniker Id="32d0a92f-df8c-445a-8058-fc404800cc3b" />
+        <classShapeMoniker Id="fba8d04f-74e4-451a-b14a-519cd5f6eb68" />
+        <classShapeMoniker Id="430c074c-c3e5-4295-aafe-2209144d7abb" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>
