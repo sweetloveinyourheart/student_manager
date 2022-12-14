@@ -78,7 +78,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(294, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(252, 24);
+            this.label1.Size = new System.Drawing.Size(515, 48);
             this.label1.TabIndex = 0;
             this.label1.Text = "QUẢN LÝ NGƯỜI DÙNG ";
             // 
@@ -91,7 +91,7 @@
             "Member"});
             this.cboQuyen.Location = new System.Drawing.Point(481, 139);
             this.cboQuyen.Name = "cboQuyen";
-            this.cboQuyen.Size = new System.Drawing.Size(181, 23);
+            this.cboQuyen.Size = new System.Drawing.Size(181, 37);
             this.cboQuyen.TabIndex = 18;
             // 
             // label6
@@ -100,7 +100,7 @@
             this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label6.Location = new System.Drawing.Point(358, 147);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(43, 15);
+            this.label6.Size = new System.Drawing.Size(83, 29);
             this.label6.TabIndex = 17;
             this.label6.Text = "Quyền";
             // 
@@ -109,7 +109,7 @@
             this.txtConfimMk.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtConfimMk.Location = new System.Drawing.Point(480, 96);
             this.txtConfimMk.Name = "txtConfimMk";
-            this.txtConfimMk.Size = new System.Drawing.Size(182, 22);
+            this.txtConfimMk.Size = new System.Drawing.Size(182, 37);
             this.txtConfimMk.TabIndex = 15;
             // 
             // txtMK
@@ -117,7 +117,7 @@
             this.txtMK.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtMK.Location = new System.Drawing.Point(480, 56);
             this.txtMK.Name = "txtMK";
-            this.txtMK.Size = new System.Drawing.Size(182, 22);
+            this.txtMK.Size = new System.Drawing.Size(182, 37);
             this.txtMK.TabIndex = 14;
             // 
             // txtTaikhoan
@@ -125,7 +125,7 @@
             this.txtTaikhoan.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtTaikhoan.Location = new System.Drawing.Point(480, 21);
             this.txtTaikhoan.Name = "txtTaikhoan";
-            this.txtTaikhoan.Size = new System.Drawing.Size(182, 22);
+            this.txtTaikhoan.Size = new System.Drawing.Size(182, 37);
             this.txtTaikhoan.TabIndex = 13;
             // 
             // label5
@@ -134,9 +134,9 @@
             this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label5.Location = new System.Drawing.Point(358, 103);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(102, 15);
+            this.label5.Size = new System.Drawing.Size(205, 29);
             this.label5.TabIndex = 12;
-            this.label5.Text = "Đánh lại mật khẩu";
+            this.label5.Text = "Nhập lại mật khẩu";
             // 
             // groupBox1
             // 
@@ -175,7 +175,7 @@
             "Nữ"});
             this.cboGioiTinh.Location = new System.Drawing.Point(142, 55);
             this.cboGioiTinh.Name = "cboGioiTinh";
-            this.cboGioiTinh.Size = new System.Drawing.Size(76, 23);
+            this.cboGioiTinh.Size = new System.Drawing.Size(76, 37);
             this.cboGioiTinh.TabIndex = 55;
             // 
             // label7
@@ -185,7 +185,7 @@
             this.label7.ForeColor = System.Drawing.Color.Black;
             this.label7.Location = new System.Drawing.Point(16, 63);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(55, 15);
+            this.label7.Size = new System.Drawing.Size(109, 29);
             this.label7.TabIndex = 54;
             this.label7.Text = "Giới tính:";
             // 
@@ -196,7 +196,7 @@
             this.mskPhone.Location = new System.Drawing.Point(143, 96);
             this.mskPhone.Mask = "(9999) 000-000";
             this.mskPhone.Name = "mskPhone";
-            this.mskPhone.Size = new System.Drawing.Size(181, 22);
+            this.mskPhone.Size = new System.Drawing.Size(181, 37);
             this.mskPhone.TabIndex = 53;
             // 
             // txtEmail
@@ -205,7 +205,7 @@
             this.txtEmail.ForeColor = System.Drawing.Color.Black;
             this.txtEmail.Location = new System.Drawing.Point(143, 140);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(181, 22);
+            this.txtEmail.Size = new System.Drawing.Size(181, 37);
             this.txtEmail.TabIndex = 52;
             // 
             // label3
@@ -215,7 +215,7 @@
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(17, 147);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 15);
+            this.label3.Size = new System.Drawing.Size(73, 29);
             this.label3.TabIndex = 51;
             this.label3.Text = "Email";
             // 
@@ -226,7 +226,7 @@
             this.label8.ForeColor = System.Drawing.Color.Black;
             this.label8.Location = new System.Drawing.Point(17, 103);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(41, 15);
+            this.label8.Size = new System.Drawing.Size(79, 29);
             this.label8.TabIndex = 50;
             this.label8.Text = "Phone";
             // 
@@ -236,7 +236,7 @@
             this.txtHoTen.ForeColor = System.Drawing.Color.Black;
             this.txtHoTen.Location = new System.Drawing.Point(142, 21);
             this.txtHoTen.Name = "txtHoTen";
-            this.txtHoTen.Size = new System.Drawing.Size(182, 22);
+            this.txtHoTen.Size = new System.Drawing.Size(182, 37);
             this.txtHoTen.TabIndex = 49;
             // 
             // label9
@@ -246,7 +246,7 @@
             this.label9.ForeColor = System.Drawing.Color.Black;
             this.label9.Location = new System.Drawing.Point(17, 28);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(59, 15);
+            this.label9.Size = new System.Drawing.Size(114, 29);
             this.label9.TabIndex = 48;
             this.label9.Text = "Họ và tên";
             // 
@@ -256,7 +256,7 @@
             this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label4.Location = new System.Drawing.Point(358, 63);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 15);
+            this.label4.Size = new System.Drawing.Size(113, 29);
             this.label4.TabIndex = 11;
             this.label4.Text = "Mật khẩu";
             // 
@@ -266,7 +266,7 @@
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label2.Location = new System.Drawing.Point(358, 28);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 15);
+            this.label2.Size = new System.Drawing.Size(164, 29);
             this.label2.TabIndex = 9;
             this.label2.Text = "Tên tài khoản ";
             // 
@@ -297,6 +297,7 @@
             this.dgrLogin.DataSource = this.tblLOGINBindingSource;
             this.dgrLogin.Location = new System.Drawing.Point(7, 18);
             this.dgrLogin.Name = "dgrLogin";
+            this.dgrLogin.RowHeadersWidth = 82;
             this.dgrLogin.Size = new System.Drawing.Size(703, 197);
             this.dgrLogin.TabIndex = 0;
             this.dgrLogin.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrLogin_CellContentClick);
@@ -305,43 +306,57 @@
             // 
             this.tenDNDataGridViewTextBoxColumn.DataPropertyName = "TenDN";
             this.tenDNDataGridViewTextBoxColumn.HeaderText = "TenDN";
+            this.tenDNDataGridViewTextBoxColumn.MinimumWidth = 10;
             this.tenDNDataGridViewTextBoxColumn.Name = "tenDNDataGridViewTextBoxColumn";
+            this.tenDNDataGridViewTextBoxColumn.Width = 200;
             // 
             // matKhauDataGridViewTextBoxColumn
             // 
             this.matKhauDataGridViewTextBoxColumn.DataPropertyName = "MatKhau";
             this.matKhauDataGridViewTextBoxColumn.HeaderText = "MatKhau";
+            this.matKhauDataGridViewTextBoxColumn.MinimumWidth = 10;
             this.matKhauDataGridViewTextBoxColumn.Name = "matKhauDataGridViewTextBoxColumn";
+            this.matKhauDataGridViewTextBoxColumn.Width = 200;
             // 
             // hoTenDataGridViewTextBoxColumn
             // 
             this.hoTenDataGridViewTextBoxColumn.DataPropertyName = "HoTen";
             this.hoTenDataGridViewTextBoxColumn.HeaderText = "HoTen";
+            this.hoTenDataGridViewTextBoxColumn.MinimumWidth = 10;
             this.hoTenDataGridViewTextBoxColumn.Name = "hoTenDataGridViewTextBoxColumn";
+            this.hoTenDataGridViewTextBoxColumn.Width = 200;
             // 
             // gioiTinhDataGridViewTextBoxColumn
             // 
             this.gioiTinhDataGridViewTextBoxColumn.DataPropertyName = "GioiTinh";
             this.gioiTinhDataGridViewTextBoxColumn.HeaderText = "GioiTinh";
+            this.gioiTinhDataGridViewTextBoxColumn.MinimumWidth = 10;
             this.gioiTinhDataGridViewTextBoxColumn.Name = "gioiTinhDataGridViewTextBoxColumn";
+            this.gioiTinhDataGridViewTextBoxColumn.Width = 200;
             // 
             // phoneDataGridViewTextBoxColumn
             // 
             this.phoneDataGridViewTextBoxColumn.DataPropertyName = "Phone";
             this.phoneDataGridViewTextBoxColumn.HeaderText = "Phone";
+            this.phoneDataGridViewTextBoxColumn.MinimumWidth = 10;
             this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
+            this.phoneDataGridViewTextBoxColumn.Width = 200;
             // 
             // emailDataGridViewTextBoxColumn
             // 
             this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
             this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.MinimumWidth = 10;
             this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.Width = 200;
             // 
             // quyenDataGridViewTextBoxColumn
             // 
             this.quyenDataGridViewTextBoxColumn.DataPropertyName = "Quyen";
             this.quyenDataGridViewTextBoxColumn.HeaderText = "Quyen";
+            this.quyenDataGridViewTextBoxColumn.MinimumWidth = 10;
             this.quyenDataGridViewTextBoxColumn.Name = "quyenDataGridViewTextBoxColumn";
+            this.quyenDataGridViewTextBoxColumn.Width = 200;
             // 
             // tblLOGINBindingSource
             // 
@@ -419,7 +434,7 @@
             // 
             // frmQuanLyNguoiDung
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(25F, 48F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(873, 463);
             this.Controls.Add(this.btnThoat);

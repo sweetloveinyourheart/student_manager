@@ -10,6 +10,7 @@ using System.Data.SqlClient;
 using System.Data.Sql;
 using System.Diagnostics;
 using System.IO;
+using BUS;
 
 namespace Quản_lý_điểm_sinh_vien_CNTT
 {
@@ -29,60 +30,7 @@ namespace Quản_lý_điểm_sinh_vien_CNTT
 
         private void btnThemmoi_Click(object sender, EventArgs e)
         {
-            //Kiem tra trung TenDN
-            string select2 = "Select * From tblLOGIN where TenDN='" + txtTaikhoan.Text + "'";
-            SqlCommand cmd2 = new SqlCommand(select2, conn);
-            SqlDataReader reader2;
-            reader2 = cmd2.ExecuteReader();
-
-            errorProvider1.Clear();
-            if (txtTaikhoan.Text == "")
-            {
-                errorProvider1.SetError(txtTaikhoan, "Tên tài khoản không  để trống !");
-                txtTaikhoan.Focus();
-            }
-            else if (txtMK.Text == "")
-            {
-                errorProvider1.SetError(txtMK, "Bạn chưa nhập mật khẩu !");
-                txtMK.Focus();
-            }
-            else if (txtConfimMk.Text == "")
-            {
-                errorProvider1.SetError(txtConfimMk, "Bạn chưa nhập lại mật khẩu !");
-                txtConfimMk.Focus();
-            }
-            else if (txtConfimMk.Text != txtMK.Text)
-           
-                MessageBox.Show("Bạn nhập lại mật khẩu không trùng khớp", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            
-            else if (reader2.Read())
-            {
-                MessageBox.Show("Tài khoản " + txtTaikhoan.Text + " đã tồn tại", "Thông báo !", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtTaikhoan.Focus();
-                cmd2.Dispose();
-                reader2.Dispose();
-            }
-            else
-            {
-                // Trả tài nguyên
-                cmd2.Dispose();
-                reader2.Dispose();
-                // Thực hiện truy vấn
-                string insert = "Insert Into tblLOGIN(TenDN,MatKhau,HoTen,Gioitinh,Phone,Email,Quyen)" +
-                                "Values('" + txtTaikhoan.Text + "','" + txtMK.Text + "',N'" + txtHoTen.Text + "',N'" + cboGioiTinh.Text + "','" +
-                                mskPhone.Text + "','" + txtEmail.Text + "',N'" + cboQuyen.Text + "')";
-                SqlCommand cmd = new SqlCommand(insert, conn);
-
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Thêm mới thành công", "Thông báo!");
-
-                // Trả tài nguyên
-                cmd.Dispose();
-
-            }
-            // Trả tài nguyên
-            cmd2.Dispose();
-            reader2.Dispose();
+            LoginBUS.Instance.ThemNguoiDung(errorProvider1, txtTaikhoan, txtMK, txtConfimMk, txtHoTen, cboGioiTinh, mskPhone, txtEmail, cboGioiTinh);
             //Fill du lieu 
             FillDataGridView_Login();
         }
@@ -98,24 +46,7 @@ namespace Quản_lý_điểm_sinh_vien_CNTT
         }
         public void FillDataGridView_Login()
         {
-            // Thực hiện truy vấn
-            string select = "Select * From tblLOGIN  ";
-            SqlCommand cmd = new SqlCommand(select, conn);
-
-            // Tạo đối tượng DataSet
-            DataSet ds = new DataSet();
-
-            // Tạo đối tượng điều hợp
-            SqlDataAdapter adapter = new SqlDataAdapter();
-            adapter.SelectCommand = cmd;
-
-            // Fill dữ liệu từ adapter vào DataSet
-            adapter.Fill(ds, "SINHVIEN");
-
-            // Đưa ra DataGridView
-            dgrLogin.DataSource = ds;
-            dgrLogin.DataMember = "SINHVIEN";
-            cmd.Dispose();
+            LoginBUS.Instance.FormLoad(dgrLogin);
         }
 
         private void dgrLogin_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -135,12 +66,7 @@ namespace Quản_lý_điểm_sinh_vien_CNTT
             {
                 // Thuc hien xoa du lieu
 
-                SqlCommand cmd = new SqlCommand("delete from tblLOGIN where TenDN='" + txtTaikhoan.Text + "'", conn);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Xóa dữ liệu thành công", "Thông báo!");
-
-                // Trả tài nguyên
-                cmd.Dispose();
+                LoginBUS.Instance.XoaNguoiDung(txtTaikhoan);
                 //Fill du lieu 
                 FillDataGridView_Login();
             }
@@ -154,16 +80,10 @@ namespace Quản_lý_điểm_sinh_vien_CNTT
             else
             {
                 // Thực hiện truy vấn
-                string update = "Update tblLOGIN Set MatKhau=N'" + txtMK.Text + "',HoTen=N'" + txtHoTen.Text + "',GioiTinh=N'" +
-                                cboGioiTinh.Text + "',Phone='" + mskPhone.Text + "',Email='" +
-                                txtEmail.Text + "',Quyen=N'" + cboQuyen.Text + "' where TenDN='" + txtTaikhoan.Text + "'";
-                SqlCommand cmd = new SqlCommand(update, conn);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Cập nhật dữ liệu thành công", "Thông báo!");
+                LoginBUS.Instance.SuaNguoiDung(errorProvider1, txtTaikhoan, txtMK, txtHoTen, cboGioiTinh, mskPhone, txtEmail, cboGioiTinh);
                 //Load lai du lieu
                 FillDataGridView_Login();
-                // Trả tài nguyên
-                cmd.Dispose();
+               
             }
         }
 

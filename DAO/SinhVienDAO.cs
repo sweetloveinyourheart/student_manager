@@ -51,7 +51,7 @@ namespace DAO
             string malop
             )
         {
-            SinhVien sv = db.tblSINH_VIENs.Select(s => new SinhVien()).Where(eq => eq.MaSv == masv).FirstOrDefault();
+            SinhVien sv = db.tblSINH_VIENs.Where(eq => eq.MaSv == masv).Select(s => new SinhVien()).FirstOrDefault();
             if(sv != null)
             {
                 return false;
