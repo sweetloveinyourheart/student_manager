@@ -24,13 +24,13 @@ namespace DTO
 
         public string TenMon { get { return tenmon; } set { tenmon = value; } }
 
-        private string diemhoclai;
+        private float diemhoclai;
 
-        public string DiemHocLai { get { return diemhoclai; } set { diemhoclai = value; } }
+        public float DiemHocLai { get { return diemhoclai; } set { diemhoclai = value; } }
 
-        private string hocki;
+        private int hocki;
 
-        public string HocKi { get { return hocki; } set { hocki = value; } }
+        public int HocKi { get { return hocki; } set { hocki = value; } }
 
         public KetQua3()
         {
@@ -41,8 +41,8 @@ namespace DTO
             string hoten,
             string malop,
             string tenmon,
-            string diemhoclai,
-            string hocki
+            float diemhoclai,
+            int hocki
             )
         {
 

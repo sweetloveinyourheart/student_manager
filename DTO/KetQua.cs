@@ -24,25 +24,29 @@ namespace DTO
 
         public string MaMon { get { return mamon; } set { mamon = value; } }
 
-        private string diemtb;
+        private double? diemtb;
 
-        public string DiemTB { get { return diemtb; } set { diemtb = value; } }
+        public double? DiemTB { get { return diemtb; } set { diemtb = value; } }
 
-        private string diemthilai1;
+        private double? diemthilai1;
 
-        public string DiemThiLai1 { get { return diemthilai1; } set { diemthilai1 = value; } }
+        public double? DiemThiLai1 { get { return diemthilai1; } set { diemthilai1 = value; } }
 
-        private string diemthilai2;
+        private double? diemthilai2;
 
-        public string DiemThiLai2 { get { return diemthilai2; } set { diemthilai2 = value; } }
+        public double? DiemThiLai2 { get { return diemthilai2; } set { diemthilai2 = value; } }
+
+        private double? diemtongket;
+
+        public double? DiemTongKet { get { return diemtongket; } set { diemtongket = value; } }
 
         private string hanhkiem;
 
         public string HanhKiem { get { return hanhkiem; } set { hanhkiem = value; } }
 
-        private string hocki;
+        private int? hocki;
 
-        public string HocKi { get { return hocki; } set { hocki = value; } }
+        public int? HocKi { get { return hocki; } set { hocki = value; } }
 
         private string ghichu;
 
@@ -57,11 +61,12 @@ namespace DTO
             string hoten,
             string malop,
             string mamon,
-            string diemtb,
-            string diemthilai1,
-            string diemthilai2,
+            double? diemtb,
+            double? diemthilai1,
+            double? diemthilai2,
+            double? diemtongket,
             string hanhkiem,
-            string hocki,
+            int? hocki,
             string ghichu
             )
         {
@@ -73,6 +78,7 @@ namespace DTO
             this.diemtb = diemtb;
             this.diemthilai1 = diemthilai1;
             this.diemthilai2 = diemthilai2;
+            this.diemtongket = diemtongket;
             this.hanhkiem = hanhkiem;
             this.hocki = hocki;
             this.ghichu = ghichu;

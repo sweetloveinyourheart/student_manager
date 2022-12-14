@@ -16,9 +16,9 @@ namespace DTO
 
         public string TenMon { get { return tenmon; } set { tenmon = value; } }
 
-        private string sodvht;
+        private int? sodvht;
 
-        public string SoDVHT { get { return sodvht; } set { sodvht = value; } }
+        public int? SoDVHT { get { return sodvht; } set { sodvht = value; } }
 
         private string magv;
 
@@ -39,7 +39,7 @@ namespace DTO
         public MonHoc(
             string mamon,
             string tenmon,
-            string sodvht,
+            int? sodvht,
             string magv,
             string hocki,
             string makhoa
