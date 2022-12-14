@@ -37,8 +37,6 @@ namespace DAO
                 )
             ).ToList();
 
-            Console.WriteLine("abc");
-            
             return list;
         }
 
@@ -57,8 +55,6 @@ namespace DAO
                     s.MaLop
                 )
             ).ToList();
-
-            Console.WriteLine("abc");
 
             return list;
         }

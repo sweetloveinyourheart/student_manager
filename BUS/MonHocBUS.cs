@@ -43,5 +43,15 @@ namespace BUS
                 cboMonHoc.Items.Add(mon.MaMon);
             }
         }
+
+        public void FillCBByHocKy(ComboBox cboHocKy, ComboBox cboMonHoc)
+        {
+            List<tblMON> monhocs = MonHocDAO.Instance.CBLoadByHocKy(cboHocKy.Text);
+            cboMonHoc.Items.Clear();
+            foreach (tblMON mon in monhocs)
+            {
+                cboMonHoc.Items.Add(mon.MaMon);
+            }
+        }
     }
 }

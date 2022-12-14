@@ -53,6 +53,9 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="GiangVienDAO.cs" />
+    <Compile Include="KetQua2DAO.cs" />
+    <Compile Include="KetQua3DAO.cs" />
     <Compile Include="KetQuaDAO.cs" />
     <Compile Include="KhoaDAO.cs" />
     <Compile Include="LoginDAO.cs" />

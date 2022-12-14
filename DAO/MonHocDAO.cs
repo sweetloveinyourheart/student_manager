@@ -50,5 +50,13 @@ namespace DAO
             return list;
         }
 
+        public List<tblMON> CBLoadByHocKy(string hocky)
+        {
+            List<tblMON> list = new List<tblMON>();
+
+            list = db.tblMONs.Select(s => s).Where(eq => eq.HocKi == hocky).ToList();
+
+            return list;
+        }
     }
 }

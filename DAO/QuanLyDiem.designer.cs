@@ -36,6 +36,12 @@ namespace DAO
     partial void InserttblSINH_VIEN(tblSINH_VIEN instance);
     partial void UpdatetblSINH_VIEN(tblSINH_VIEN instance);
     partial void DeletetblSINH_VIEN(tblSINH_VIEN instance);
+    partial void InserttblKET_QUA3(tblKET_QUA3 instance);
+    partial void UpdatetblKET_QUA3(tblKET_QUA3 instance);
+    partial void DeletetblKET_QUA3(tblKET_QUA3 instance);
+    partial void InserttblKET_QUA2(tblKET_QUA2 instance);
+    partial void UpdatetblKET_QUA2(tblKET_QUA2 instance);
+    partial void DeletetblKET_QUA2(tblKET_QUA2 instance);
     partial void InserttblKHOA(tblKHOA instance);
     partial void UpdatetblKHOA(tblKHOA instance);
     partial void DeletetblKHOA(tblKHOA instance);
@@ -104,19 +110,19 @@ namespace DAO
 			}
 		}
 		
-		public System.Data.Linq.Table<tblKET_QUA2> tblKET_QUA2s
-		{
-			get
-			{
-				return this.GetTable<tblKET_QUA2>();
-			}
-		}
-		
 		public System.Data.Linq.Table<tblKET_QUA3> tblKET_QUA3s
 		{
 			get
 			{
 				return this.GetTable<tblKET_QUA3>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tblKET_QUA2> tblKET_QUA2s
+		{
+			get
+			{
+				return this.GetTable<tblKET_QUA2>();
 			}
 		}
 		
@@ -817,9 +823,11 @@ namespace DAO
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblKET_QUA2")]
-	public partial class tblKET_QUA2
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblKET_QUA3")]
+	public partial class tblKET_QUA3 : INotifyPropertyChanging, INotifyPropertyChanged
 	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private string _MaSV;
 		
@@ -829,15 +837,37 @@ namespace DAO
 		
 		private string _TenMon;
 		
-		private string _DiemThiLai;
+		private System.Nullable<double> _DiemHocLai;
 		
-		private string _HocKi;
+		private System.Nullable<int> _HocKi;
 		
-		public tblKET_QUA2()
+		private EntityRef<tblLOP> _tblLOP;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMaSVChanging(string value);
+    partial void OnMaSVChanged();
+    partial void OnHoTenChanging(string value);
+    partial void OnHoTenChanged();
+    partial void OnMaLopChanging(string value);
+    partial void OnMaLopChanged();
+    partial void OnTenMonChanging(string value);
+    partial void OnTenMonChanged();
+    partial void OnDiemHocLaiChanging(System.Nullable<double> value);
+    partial void OnDiemHocLaiChanged();
+    partial void OnHocKiChanging(System.Nullable<int> value);
+    partial void OnHocKiChanged();
+    #endregion
+		
+		public tblKET_QUA3()
 		{
+			this._tblLOP = default(EntityRef<tblLOP>);
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaSV", DbType="NVarChar(10)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaSV", DbType="NVarChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
 		public string MaSV
 		{
 			get
@@ -848,7 +878,11 @@ namespace DAO
 			{
 				if ((this._MaSV != value))
 				{
+					this.OnMaSVChanging(value);
+					this.SendPropertyChanging();
 					this._MaSV = value;
+					this.SendPropertyChanged("MaSV");
+					this.OnMaSVChanged();
 				}
 			}
 		}
@@ -864,7 +898,11 @@ namespace DAO
 			{
 				if ((this._HoTen != value))
 				{
+					this.OnHoTenChanging(value);
+					this.SendPropertyChanging();
 					this._HoTen = value;
+					this.SendPropertyChanged("HoTen");
+					this.OnHoTenChanged();
 				}
 			}
 		}
@@ -880,7 +918,15 @@ namespace DAO
 			{
 				if ((this._MaLop != value))
 				{
+					if (this._tblLOP.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMaLopChanging(value);
+					this.SendPropertyChanging();
 					this._MaLop = value;
+					this.SendPropertyChanged("MaLop");
+					this.OnMaLopChanged();
 				}
 			}
 		}
@@ -896,124 +942,11 @@ namespace DAO
 			{
 				if ((this._TenMon != value))
 				{
+					this.OnTenMonChanging(value);
+					this.SendPropertyChanging();
 					this._TenMon = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiemThiLai", DbType="NVarChar(50)")]
-		public string DiemThiLai
-		{
-			get
-			{
-				return this._DiemThiLai;
-			}
-			set
-			{
-				if ((this._DiemThiLai != value))
-				{
-					this._DiemThiLai = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HocKi", DbType="NVarChar(50)")]
-		public string HocKi
-		{
-			get
-			{
-				return this._HocKi;
-			}
-			set
-			{
-				if ((this._HocKi != value))
-				{
-					this._HocKi = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblKET_QUA3")]
-	public partial class tblKET_QUA3
-	{
-		
-		private string _MaSv;
-		
-		private string _HoTen;
-		
-		private string _MaLop;
-		
-		private string _TenMon;
-		
-		private System.Nullable<double> _DiemHocLai;
-		
-		private System.Nullable<int> _HocKi;
-		
-		public tblKET_QUA3()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaSv", DbType="NVarChar(50)")]
-		public string MaSv
-		{
-			get
-			{
-				return this._MaSv;
-			}
-			set
-			{
-				if ((this._MaSv != value))
-				{
-					this._MaSv = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HoTen", DbType="NVarChar(50)")]
-		public string HoTen
-		{
-			get
-			{
-				return this._HoTen;
-			}
-			set
-			{
-				if ((this._HoTen != value))
-				{
-					this._HoTen = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaLop", DbType="NVarChar(50)")]
-		public string MaLop
-		{
-			get
-			{
-				return this._MaLop;
-			}
-			set
-			{
-				if ((this._MaLop != value))
-				{
-					this._MaLop = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenMon", DbType="NVarChar(50)")]
-		public string TenMon
-		{
-			get
-			{
-				return this._TenMon;
-			}
-			set
-			{
-				if ((this._TenMon != value))
-				{
-					this._TenMon = value;
+					this.SendPropertyChanged("TenMon");
+					this.OnTenMonChanged();
 				}
 			}
 		}
@@ -1029,7 +962,11 @@ namespace DAO
 			{
 				if ((this._DiemHocLai != value))
 				{
+					this.OnDiemHocLaiChanging(value);
+					this.SendPropertyChanging();
 					this._DiemHocLai = value;
+					this.SendPropertyChanged("DiemHocLai");
+					this.OnDiemHocLaiChanged();
 				}
 			}
 		}
@@ -1045,8 +982,289 @@ namespace DAO
 			{
 				if ((this._HocKi != value))
 				{
+					this.OnHocKiChanging(value);
+					this.SendPropertyChanging();
 					this._HocKi = value;
+					this.SendPropertyChanged("HocKi");
+					this.OnHocKiChanged();
 				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblLOP_tblKET_QUA3", Storage="_tblLOP", ThisKey="MaLop", OtherKey="MaLop", IsForeignKey=true)]
+		public tblLOP tblLOP
+		{
+			get
+			{
+				return this._tblLOP.Entity;
+			}
+			set
+			{
+				tblLOP previousValue = this._tblLOP.Entity;
+				if (((previousValue != value) 
+							|| (this._tblLOP.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._tblLOP.Entity = null;
+						previousValue.tblKET_QUA3s.Remove(this);
+					}
+					this._tblLOP.Entity = value;
+					if ((value != null))
+					{
+						value.tblKET_QUA3s.Add(this);
+						this._MaLop = value.MaLop;
+					}
+					else
+					{
+						this._MaLop = default(string);
+					}
+					this.SendPropertyChanged("tblLOP");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblKET_QUA2")]
+	public partial class tblKET_QUA2 : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _MaSV;
+		
+		private string _HoTen;
+		
+		private string _MaLop;
+		
+		private string _TenMon;
+		
+		private string _DiemThiLai;
+		
+		private string _HocKi;
+		
+		private EntityRef<tblLOP> _tblLOP;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMaSVChanging(string value);
+    partial void OnMaSVChanged();
+    partial void OnHoTenChanging(string value);
+    partial void OnHoTenChanged();
+    partial void OnMaLopChanging(string value);
+    partial void OnMaLopChanged();
+    partial void OnTenMonChanging(string value);
+    partial void OnTenMonChanged();
+    partial void OnDiemThiLaiChanging(string value);
+    partial void OnDiemThiLaiChanged();
+    partial void OnHocKiChanging(string value);
+    partial void OnHocKiChanged();
+    #endregion
+		
+		public tblKET_QUA2()
+		{
+			this._tblLOP = default(EntityRef<tblLOP>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaSV", DbType="NVarChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string MaSV
+		{
+			get
+			{
+				return this._MaSV;
+			}
+			set
+			{
+				if ((this._MaSV != value))
+				{
+					this.OnMaSVChanging(value);
+					this.SendPropertyChanging();
+					this._MaSV = value;
+					this.SendPropertyChanged("MaSV");
+					this.OnMaSVChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HoTen", DbType="NVarChar(50)")]
+		public string HoTen
+		{
+			get
+			{
+				return this._HoTen;
+			}
+			set
+			{
+				if ((this._HoTen != value))
+				{
+					this.OnHoTenChanging(value);
+					this.SendPropertyChanging();
+					this._HoTen = value;
+					this.SendPropertyChanged("HoTen");
+					this.OnHoTenChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaLop", DbType="NVarChar(10)")]
+		public string MaLop
+		{
+			get
+			{
+				return this._MaLop;
+			}
+			set
+			{
+				if ((this._MaLop != value))
+				{
+					if (this._tblLOP.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMaLopChanging(value);
+					this.SendPropertyChanging();
+					this._MaLop = value;
+					this.SendPropertyChanged("MaLop");
+					this.OnMaLopChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenMon", DbType="NVarChar(50)")]
+		public string TenMon
+		{
+			get
+			{
+				return this._TenMon;
+			}
+			set
+			{
+				if ((this._TenMon != value))
+				{
+					this.OnTenMonChanging(value);
+					this.SendPropertyChanging();
+					this._TenMon = value;
+					this.SendPropertyChanged("TenMon");
+					this.OnTenMonChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiemThiLai", DbType="NVarChar(50)")]
+		public string DiemThiLai
+		{
+			get
+			{
+				return this._DiemThiLai;
+			}
+			set
+			{
+				if ((this._DiemThiLai != value))
+				{
+					this.OnDiemThiLaiChanging(value);
+					this.SendPropertyChanging();
+					this._DiemThiLai = value;
+					this.SendPropertyChanged("DiemThiLai");
+					this.OnDiemThiLaiChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HocKi", DbType="NVarChar(50)")]
+		public string HocKi
+		{
+			get
+			{
+				return this._HocKi;
+			}
+			set
+			{
+				if ((this._HocKi != value))
+				{
+					this.OnHocKiChanging(value);
+					this.SendPropertyChanging();
+					this._HocKi = value;
+					this.SendPropertyChanged("HocKi");
+					this.OnHocKiChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblLOP_tblKET_QUA2", Storage="_tblLOP", ThisKey="MaLop", OtherKey="MaLop", IsForeignKey=true)]
+		public tblLOP tblLOP
+		{
+			get
+			{
+				return this._tblLOP.Entity;
+			}
+			set
+			{
+				tblLOP previousValue = this._tblLOP.Entity;
+				if (((previousValue != value) 
+							|| (this._tblLOP.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._tblLOP.Entity = null;
+						previousValue.tblKET_QUA2s.Remove(this);
+					}
+					this._tblLOP.Entity = value;
+					if ((value != null))
+					{
+						value.tblKET_QUA2s.Add(this);
+						this._MaLop = value.MaLop;
+					}
+					else
+					{
+						this._MaLop = default(string);
+					}
+					this.SendPropertyChanged("tblLOP");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
@@ -1413,6 +1631,10 @@ namespace DAO
 		
 		private EntitySet<tblSINH_VIEN> _tblSINH_VIENs;
 		
+		private EntitySet<tblKET_QUA3> _tblKET_QUA3s;
+		
+		private EntitySet<tblKET_QUA2> _tblKET_QUA2s;
+		
 		private EntityRef<tblKHOA> _tblKHOA;
 		
     #region Extensibility Method Definitions
@@ -1430,6 +1652,8 @@ namespace DAO
 		public tblLOP()
 		{
 			this._tblSINH_VIENs = new EntitySet<tblSINH_VIEN>(new Action<tblSINH_VIEN>(this.attach_tblSINH_VIENs), new Action<tblSINH_VIEN>(this.detach_tblSINH_VIENs));
+			this._tblKET_QUA3s = new EntitySet<tblKET_QUA3>(new Action<tblKET_QUA3>(this.attach_tblKET_QUA3s), new Action<tblKET_QUA3>(this.detach_tblKET_QUA3s));
+			this._tblKET_QUA2s = new EntitySet<tblKET_QUA2>(new Action<tblKET_QUA2>(this.attach_tblKET_QUA2s), new Action<tblKET_QUA2>(this.detach_tblKET_QUA2s));
 			this._tblKHOA = default(EntityRef<tblKHOA>);
 			OnCreated();
 		}
@@ -1511,6 +1735,32 @@ namespace DAO
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblLOP_tblKET_QUA3", Storage="_tblKET_QUA3s", ThisKey="MaLop", OtherKey="MaLop")]
+		public EntitySet<tblKET_QUA3> tblKET_QUA3s
+		{
+			get
+			{
+				return this._tblKET_QUA3s;
+			}
+			set
+			{
+				this._tblKET_QUA3s.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblLOP_tblKET_QUA2", Storage="_tblKET_QUA2s", ThisKey="MaLop", OtherKey="MaLop")]
+		public EntitySet<tblKET_QUA2> tblKET_QUA2s
+		{
+			get
+			{
+				return this._tblKET_QUA2s;
+			}
+			set
+			{
+				this._tblKET_QUA2s.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblKHOA_tblLOP", Storage="_tblKHOA", ThisKey="MaKhoa", OtherKey="MaKhoa", IsForeignKey=true)]
 		public tblKHOA tblKHOA
 		{
@@ -1572,6 +1822,30 @@ namespace DAO
 		}
 		
 		private void detach_tblSINH_VIENs(tblSINH_VIEN entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblLOP = null;
+		}
+		
+		private void attach_tblKET_QUA3s(tblKET_QUA3 entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblLOP = this;
+		}
+		
+		private void detach_tblKET_QUA3s(tblKET_QUA3 entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblLOP = null;
+		}
+		
+		private void attach_tblKET_QUA2s(tblKET_QUA2 entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblLOP = this;
+		}
+		
+		private void detach_tblKET_QUA2s(tblKET_QUA2 entity)
 		{
 			this.SendPropertyChanging();
 			entity.tblLOP = null;

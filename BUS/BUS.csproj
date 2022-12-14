@@ -52,6 +52,9 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="GiangVienBUS.cs" />
+    <Compile Include="KetQua2BUS.cs" />
+    <Compile Include="KetQua3BUS.cs" />
     <Compile Include="KetQuaBUS.cs" />
     <Compile Include="KhoaBUS.cs" />
     <Compile Include="LoginBUS.cs" />
