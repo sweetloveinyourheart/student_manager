@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Data.Sql;
 using System.Diagnostics;
+using BUS;
 
 namespace Quản_lý_điểm_sinh_vien_CNTT
 {
@@ -24,7 +25,8 @@ namespace Quản_lý_điểm_sinh_vien_CNTT
         private void frmMonHoc_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'quanlydiemDataSet52.tblMON' table. You can move, or remove it, as needed.
-            this.tblMONTableAdapter.Fill(this.quanlydiemDataSet52.tblMON);
+            MonHocBUS.Instance.FillMonDGR(dgrMON);
+
             conn = cc.Connected();
             if (conn.State == ConnectionState.Open) ;
 

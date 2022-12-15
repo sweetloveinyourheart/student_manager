@@ -59,9 +59,7 @@
             this.phanLoaiGVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.anhDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tblGIANGVIENBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
-            this.quanlydiemDataSet24 = new Quản_lý_điểm_sinh_vien_CNTT.QuanlydiemDataSet24();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.tblGIANG_VIENTableAdapter3 = new Quản_lý_điểm_sinh_vien_CNTT.QuanlydiemDataSet24TableAdapters.tblGIANG_VIENTableAdapter();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -71,7 +69,6 @@
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrDSGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblGIANGVIENBindingSource3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quanlydiemDataSet24)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -354,12 +351,9 @@
             // tblGIANGVIENBindingSource3
             // 
             this.tblGIANGVIENBindingSource3.DataMember = "tblGIANG_VIEN";
-            this.tblGIANGVIENBindingSource3.DataSource = this.quanlydiemDataSet24;
             // 
             // quanlydiemDataSet24
             // 
-            this.quanlydiemDataSet24.DataSetName = "QuanlydiemDataSet24";
-            this.quanlydiemDataSet24.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // errorProvider1
             // 
@@ -367,7 +361,6 @@
             // 
             // tblGIANG_VIENTableAdapter3
             // 
-            this.tblGIANG_VIENTableAdapter3.ClearBeforeFill = true;
             // 
             // button4
             // 
@@ -448,7 +441,6 @@
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgrDSGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblGIANGVIENBindingSource3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quanlydiemDataSet24)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -482,9 +474,7 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.ComboBox cboPhanloai;
         private System.Windows.Forms.DataGridView dgrDSGV;
-        private QuanlydiemDataSet24 quanlydiemDataSet24;
         private System.Windows.Forms.BindingSource tblGIANGVIENBindingSource3;
-        private Quản_lý_điểm_sinh_vien_CNTT.QuanlydiemDataSet24TableAdapters.tblGIANG_VIENTableAdapter tblGIANG_VIENTableAdapter3;
         private System.Windows.Forms.DataGridViewTextBoxColumn maGVDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenGVDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn gioiTinhDataGridViewTextBoxColumn;

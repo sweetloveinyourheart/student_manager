@@ -41,18 +41,15 @@
             this.maKhoaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenKhoaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tblKHOABindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.quanlydiemDataSet50 = new Quản_lý_điểm_sinh_vien_CNTT.QuanlydiemDataSet50();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.tblKHOATableAdapter = new Quản_lý_điểm_sinh_vien_CNTT.QuanlydiemDataSet50TableAdapters.tblKHOATableAdapter();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrKhoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblKHOABindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quanlydiemDataSet50)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -158,12 +155,9 @@
             // tblKHOABindingSource
             // 
             this.tblKHOABindingSource.DataMember = "tblKHOA";
-            this.tblKHOABindingSource.DataSource = this.quanlydiemDataSet50;
             // 
             // quanlydiemDataSet50
             // 
-            this.quanlydiemDataSet50.DataSetName = "QuanlydiemDataSet50";
-            this.quanlydiemDataSet50.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // errorProvider1
             // 
@@ -220,7 +214,6 @@
             // 
             // tblKHOATableAdapter
             // 
-            this.tblKHOATableAdapter.ClearBeforeFill = true;
             // 
             // frmKhoa
             // 
@@ -243,7 +236,6 @@
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgrKhoa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblKHOABindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quanlydiemDataSet50)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -265,9 +257,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.TextBox txtKhoa;
-        private QuanlydiemDataSet50 quanlydiemDataSet50;
         private System.Windows.Forms.BindingSource tblKHOABindingSource;
-        private Quản_lý_điểm_sinh_vien_CNTT.QuanlydiemDataSet50TableAdapters.tblKHOATableAdapter tblKHOATableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn maKhoaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenKhoaDataGridViewTextBoxColumn;
     }

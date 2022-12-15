@@ -24,6 +24,12 @@ namespace BUS
 
         private MonHocBUS() { }
 
+        public void FillMonDGR(DataGridView dgrMon)
+        {
+            List<MonHoc> monhocs = MonHocDAO.Instance.FormLoad();
+            dgrMon.DataSource = monhocs;
+        }
+
         public void FillMonList(ComboBox cboKhoa)
         {
             List<MonHoc> monhocs = MonHocDAO.Instance.FormLoad();

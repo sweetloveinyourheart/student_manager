@@ -22,7 +22,7 @@ namespace Quản_lý_điểm_sinh_vien_CNTT
 
         private void frmTimDiemSV_Load(object sender, EventArgs e)
         {
-            KetQuaBUS.Instance.FillSinhVienList(dgrDIEMSV);
+            KetQuaBUS.Instance.FillKetQuaList(dgrDIEMSV);
 
             KhoaBUS.Instance.FillKhoaList(cboKhoa);
 

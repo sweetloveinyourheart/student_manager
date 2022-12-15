@@ -58,18 +58,15 @@
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quyenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tblLOGINBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.quanlydiemDataSet25 = new Quản_lý_điểm_sinh_vien_CNTT.QuanlydiemDataSet25();
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThemmoi = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.tblLOGINTableAdapter = new Quản_lý_điểm_sinh_vien_CNTT.QuanlydiemDataSet25TableAdapters.tblLOGINTableAdapter();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrLogin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblLOGINBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quanlydiemDataSet25)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -361,12 +358,9 @@
             // tblLOGINBindingSource
             // 
             this.tblLOGINBindingSource.DataMember = "tblLOGIN";
-            this.tblLOGINBindingSource.DataSource = this.quanlydiemDataSet25;
             // 
             // quanlydiemDataSet25
             // 
-            this.quanlydiemDataSet25.DataSetName = "QuanlydiemDataSet25";
-            this.quanlydiemDataSet25.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btnThoat
             // 
@@ -430,7 +424,6 @@
             // 
             // tblLOGINTableAdapter
             // 
-            this.tblLOGINTableAdapter.ClearBeforeFill = true;
             // 
             // frmQuanLyNguoiDung
             // 
@@ -455,7 +448,6 @@
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgrLogin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblLOGINBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quanlydiemDataSet25)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -489,9 +481,7 @@
         private System.Windows.Forms.Button btnThemmoi;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.DataGridView dgrLogin;
-        private QuanlydiemDataSet25 quanlydiemDataSet25;
         private System.Windows.Forms.BindingSource tblLOGINBindingSource;
-        private Quản_lý_điểm_sinh_vien_CNTT.QuanlydiemDataSet25TableAdapters.tblLOGINTableAdapter tblLOGINTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenDNDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn matKhauDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn hoTenDataGridViewTextBoxColumn;

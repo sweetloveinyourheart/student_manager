@@ -53,18 +53,15 @@
             this.hocKiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.maKhoaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tblMONBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.quanlydiemDataSet52 = new Quản_lý_điểm_sinh_vien_CNTT.QuanlydiemDataSet52();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.tblMONTableAdapter = new Quản_lý_điểm_sinh_vien_CNTT.QuanlydiemDataSet52TableAdapters.tblMONTableAdapter();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrMON)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblMONBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quanlydiemDataSet52)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -270,12 +267,9 @@
             // tblMONBindingSource
             // 
             this.tblMONBindingSource.DataMember = "tblMON";
-            this.tblMONBindingSource.DataSource = this.quanlydiemDataSet52;
             // 
             // quanlydiemDataSet52
             // 
-            this.quanlydiemDataSet52.DataSetName = "QuanlydiemDataSet52";
-            this.quanlydiemDataSet52.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // button4
             // 
@@ -336,7 +330,6 @@
             // 
             // tblMONTableAdapter
             // 
-            this.tblMONTableAdapter.ClearBeforeFill = true;
             // 
             // frmMonHoc
             // 
@@ -359,7 +352,6 @@
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgrMON)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblMONBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quanlydiemDataSet52)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -389,9 +381,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cboKhoa;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private QuanlydiemDataSet52 quanlydiemDataSet52;
         private System.Windows.Forms.BindingSource tblMONBindingSource;
-        private Quản_lý_điểm_sinh_vien_CNTT.QuanlydiemDataSet52TableAdapters.tblMONTableAdapter tblMONTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn maMonDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenMonDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn soDVHTDataGridViewTextBoxColumn;

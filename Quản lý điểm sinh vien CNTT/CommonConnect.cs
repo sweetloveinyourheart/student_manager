@@ -30,7 +30,7 @@ namespace Quản_lý_điểm_sinh_vien_CNTT
         {
             string conect = SystemInformation.UserDomainName.ToString();
 
-            string source = "Data Source="+ conect +"\\SQLEXPRESS;Initial Catalog=Quanlydiem;Integrated Security=True";       
+            string source = "Data Source="+ conect + "\\EXPRESS;Initial Catalog=Quanlydiem;Integrated Security=True";       
             conn = new SqlConnection(source);
             conn.Open();            
             return conn;   

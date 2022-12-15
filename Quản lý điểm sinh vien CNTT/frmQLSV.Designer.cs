@@ -39,7 +39,6 @@
             this.diaChiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.maLopDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tblSINHVIENBindingSource8 = new System.Windows.Forms.BindingSource(this.components);
-            this.quanlydiemDataSet5 = new Quản_lý_điểm_sinh_vien_CNTT.QuanlydiemDataSet5();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.mskNgaySinh = new System.Windows.Forms.MaskedTextBox();
             this.cboGioiTinh = new System.Windows.Forms.ComboBox();
@@ -57,7 +56,6 @@
             this.btnSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
-            this.tblSINH_VIENTableAdapter5 = new Quản_lý_điểm_sinh_vien_CNTT.QuanlydiemDataSet5TableAdapters.tblSINH_VIENTableAdapter();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -68,7 +66,6 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrDSSV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblSINHVIENBindingSource8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quanlydiemDataSet5)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -142,12 +139,9 @@
             // tblSINHVIENBindingSource8
             // 
             this.tblSINHVIENBindingSource8.DataMember = "tblSINH_VIEN";
-            this.tblSINHVIENBindingSource8.DataSource = this.quanlydiemDataSet5;
             // 
             // quanlydiemDataSet5
             // 
-            this.quanlydiemDataSet5.DataSetName = "QuanlydiemDataSet5";
-            this.quanlydiemDataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // groupBox2
             // 
@@ -335,7 +329,6 @@
             // 
             // tblSINH_VIENTableAdapter5
             // 
-            this.tblSINH_VIENTableAdapter5.ClearBeforeFill = true;
             // 
             // errorProvider1
             // 
@@ -424,7 +417,6 @@
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgrDSSV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblSINHVIENBindingSource8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quanlydiemDataSet5)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
@@ -459,9 +451,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn gioiTinhDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn diaChiDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn maLopDataGridViewTextBoxColumn;
-        private QuanlydiemDataSet5 quanlydiemDataSet5;
         private System.Windows.Forms.BindingSource tblSINHVIENBindingSource8;
-        private Quản_lý_điểm_sinh_vien_CNTT.QuanlydiemDataSet5TableAdapters.tblSINH_VIENTableAdapter tblSINH_VIENTableAdapter5;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label9;

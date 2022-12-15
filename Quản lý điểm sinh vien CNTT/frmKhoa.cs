@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Data.Sql;
 using System.Diagnostics;
+using BUS;
 
 namespace Quản_lý_điểm_sinh_vien_CNTT
 {
@@ -89,8 +90,7 @@ namespace Quản_lý_điểm_sinh_vien_CNTT
 
         private void frmLop_Khoa_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'quanlydiemDataSet50.tblKHOA' table. You can move, or remove it, as needed.
-            this.tblKHOATableAdapter.Fill(this.quanlydiemDataSet50.tblKHOA);
+            KhoaBUS.Instance.FillKhoaDGR(dgrKhoa);
 
             conn = cc.Connected();
             if (conn.State == ConnectionState.Open) ;

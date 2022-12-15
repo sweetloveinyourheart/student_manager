@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Quanlydiem" Class="QuanLyDiemDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=LIL-PC\SQLEXPRESS;Initial Catalog=Quanlydiem;Integrated Security=True" SettingsObjectName="DAO.Properties.Settings" SettingsPropertyName="QuanlydiemConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=ThanhDat\EXPRESS;Initial Catalog=Quanlydiem;Integrated Security=True" SettingsObjectName="DAO.Properties.Settings" SettingsPropertyName="QuanlydiemConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.tblGIANG_VIEN" Member="tblGIANG_VIENs">
     <Type Name="tblGIANG_VIEN">
       <Column Name="MaGV" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -8,38 +8,8 @@
       <Column Name="Phone" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
       <Column Name="Email" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
       <Column Name="PhanLoaiGV" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Column Name="Anh" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Anh" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Association Name="tblGIANG_VIEN_tblMON" Member="tblMONs" ThisKey="MaGV" OtherKey="MaGV" Type="tblMON" />
-    </Type>
-  </Table>
-  <Table Name="dbo.tblSINH_VIEN" Member="tblSINH_VIENs">
-    <Type Name="tblSINH_VIEN">
-      <Column Name="MaSv" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="HoTen" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="NgaySinh" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
-      <Column Name="GioiTinh" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
-      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="MaLop" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
-      <Association Name="tblSINH_VIEN_tblKET_QUA" Member="tblKET_QUAs" ThisKey="MaSv" OtherKey="MaSV" Type="tblKET_QUA" />
-      <Association Name="tblLOP_tblSINH_VIEN" Member="tblLOP" ThisKey="MaLop" OtherKey="MaLop" Type="tblLOP" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.tblKET_QUA" Member="tblKET_QUAs">
-    <Type Name="tblKET_QUA">
-      <Column Name="MaSV" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="HoTen" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="MaLop" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
-      <Column Name="MaMon" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
-      <Column Name="DiemTB" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DiemThiLan1" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DiemThiLan2" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DiemTongKet" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="HanhKiem" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Column Name="HocKi" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Association Name="tblSINH_VIEN_tblKET_QUA" Member="tblSINH_VIEN" ThisKey="MaSV" OtherKey="MaSv" Type="tblSINH_VIEN" IsForeignKey="true" />
-      <Association Name="tblLOP_tblKET_QUA" Member="tblLOP" ThisKey="MaLop" OtherKey="MaLop" Type="tblLOP" IsForeignKey="true" />
-      <Association Name="tblMON_tblKET_QUA" Member="tblMON" ThisKey="MaMon" OtherKey="MaMon" Type="tblMON" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.tblKET_QUA2" Member="tblKET_QUA2s">
@@ -51,6 +21,24 @@
       <Column Name="DiemThiLai" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="HocKi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Association Name="tblLOP_tblKET_QUA2" Member="tblLOP" ThisKey="MaLop" OtherKey="MaLop" Type="tblLOP" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblKET_QUA" Member="tblKET_QUAs">
+    <Type Name="tblKET_QUA">
+      <Column Name="MaSV" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MaLop" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="MaMon" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="DiemTB" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DiemThiLan1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DiemThiLan2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DiemTongKet" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="HanhKiem" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="HocKi" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="tblLOP_tblKET_QUA" Member="tblLOP" ThisKey="MaLop" OtherKey="MaLop" Type="tblLOP" IsForeignKey="true" />
+      <Association Name="tblMON_tblKET_QUA" Member="tblMON" ThisKey="MaMon" OtherKey="MaMon" Type="tblMON" IsForeignKey="true" />
+      <Association Name="tblSINH_VIEN_tblKET_QUA" Member="tblSINH_VIEN" ThisKey="MaSV" OtherKey="MaSv" Type="tblSINH_VIEN" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.tblKET_QUA3" Member="tblKET_QUA3s">
@@ -74,13 +62,13 @@
   </Table>
   <Table Name="dbo.tblLOGIN" Member="tblLOGINs">
     <Type Name="tblLOGIN">
-      <Column Name="TenDN" Type="System.String" DbType="VarChar(255) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="MatKhau" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="HoTen" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="GioiTinh" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="Phone" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="Email" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="Quyen" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="TenDN" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MatKhau" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GioiTinh" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Quyen" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.tblLOP" Member="tblLOPs">
@@ -88,10 +76,10 @@
       <Column Name="MaKhoa" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
       <Column Name="MaLop" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="TenLop" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Association Name="tblLOP_tblSINH_VIEN" Member="tblSINH_VIENs" ThisKey="MaLop" OtherKey="MaLop" Type="tblSINH_VIEN" />
-      <Association Name="tblLOP_tblKET_QUA" Member="tblKET_QUAs" ThisKey="MaLop" OtherKey="MaLop" Type="tblKET_QUA" />
       <Association Name="tblLOP_tblKET_QUA2" Member="tblKET_QUA2s" ThisKey="MaLop" OtherKey="MaLop" Type="tblKET_QUA2" />
+      <Association Name="tblLOP_tblKET_QUA" Member="tblKET_QUAs" ThisKey="MaLop" OtherKey="MaLop" Type="tblKET_QUA" />
       <Association Name="tblLOP_tblKET_QUA3" Member="tblKET_QUA3s" ThisKey="MaLop" OtherKey="MaLop" Type="tblKET_QUA3" />
+      <Association Name="tblLOP_tblSINH_VIEN" Member="tblSINH_VIENs" ThisKey="MaLop" OtherKey="MaLop" Type="tblSINH_VIEN" />
       <Association Name="tblKHOA_tblLOP" Member="tblKHOA" ThisKey="MaKhoa" OtherKey="MaKhoa" Type="tblKHOA" IsForeignKey="true" />
     </Type>
   </Table>
@@ -106,6 +94,18 @@
       <Association Name="tblMON_tblKET_QUA" Member="tblKET_QUAs" ThisKey="MaMon" OtherKey="MaMon" Type="tblKET_QUA" />
       <Association Name="tblGIANG_VIEN_tblMON" Member="tblGIANG_VIEN" ThisKey="MaGV" OtherKey="MaGV" Type="tblGIANG_VIEN" IsForeignKey="true" />
       <Association Name="tblKHOA_tblMON" Member="tblKHOA" ThisKey="MaKhoa" OtherKey="MaKhoa" Type="tblKHOA" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblSINH_VIEN" Member="tblSINH_VIENs">
+    <Type Name="tblSINH_VIEN">
+      <Column Name="MaSv" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NgaySinh" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="GioiTinh" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MaLop" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Association Name="tblSINH_VIEN_tblKET_QUA" Member="tblKET_QUA" ThisKey="MaSv" OtherKey="MaSV" Type="tblKET_QUA" Cardinality="One" />
+      <Association Name="tblLOP_tblSINH_VIEN" Member="tblLOP" ThisKey="MaLop" OtherKey="MaLop" Type="tblLOP" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

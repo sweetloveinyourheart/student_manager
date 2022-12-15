@@ -37,10 +37,6 @@ namespace Quản_lý_điểm_sinh_vien_CNTT
 
         private void frmQuanLyNguoiDung_Load_1(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'quanlydiemDataSet25.tblLOGIN' table. You can move, or remove it, as needed.
-            this.tblLOGINTableAdapter.Fill(this.quanlydiemDataSet25.tblLOGIN);
-            conn = cc.Connected();
-            if (conn.State == ConnectionState.Open) ;
             //Fill du lieu 
             FillDataGridView_Login();
         }

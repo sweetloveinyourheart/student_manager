@@ -10,6 +10,7 @@ using System.Data.SqlClient;
 using System.Data.Sql;
 using System.Diagnostics;
 using System.IO;
+using BUS;
 
 namespace Quản_lý_điểm_sinh_vien_CNTT
 {
@@ -32,13 +33,12 @@ namespace Quản_lý_điểm_sinh_vien_CNTT
                 pictureBox1.Image = Image.FromFile(txtAnh.Text);
             }
 
-
         }
 
         private void frmGiangVien_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'quanlydiemDataSet24.tblGIANG_VIEN' table. You can move, or remove it, as needed.
-            this.tblGIANG_VIENTableAdapter3.Fill(this.quanlydiemDataSet24.tblGIANG_VIEN);
+            GiangVienBUS.Instance.FillGiangVienDGR(dgrDSGV);
        
             conn = cc.Connected();
             if (conn.State == ConnectionState.Open) ;

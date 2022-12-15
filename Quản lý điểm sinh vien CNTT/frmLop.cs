@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Data.Sql;
 using System.Diagnostics;
+using BUS;
 
 namespace Quản_lý_điểm_sinh_vien_CNTT
 {
@@ -29,7 +30,7 @@ namespace Quản_lý_điểm_sinh_vien_CNTT
         private void frmLop_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'quanlydiemDataSet37.tblLOP' table. You can move, or remove it, as needed.
-            this.tblLOPTableAdapter.Fill(this.quanlydiemDataSet37.tblLOP);
+            LopBUS.Instance.FillLopDGR(dgrLop);
          
             conn = cc.Connected();
             if (conn.State == ConnectionState.Open) ;

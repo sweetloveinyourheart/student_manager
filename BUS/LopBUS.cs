@@ -24,6 +24,12 @@ namespace BUS
 
         private LopBUS() { }
 
+        public void FillLopDGR(DataGridView dgrLop)
+        {
+            List<Lop> lops = LopDAO.Instance.FormLoad();
+            dgrLop.DataSource = lops;
+        }
+
         public void FillLopList(ComboBox cboLop)
         {
             List<Lop> lops = LopDAO.Instance.FormLoad();

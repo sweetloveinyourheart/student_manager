@@ -36,7 +36,6 @@
             this.maLopDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenLopDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tblLOPBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.quanlydiemDataSet37 = new Quản_lý_điểm_sinh_vien_CNTT.QuanlydiemDataSet37();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cboKhoa = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -50,11 +49,9 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.tblLOPTableAdapter = new Quản_lý_điểm_sinh_vien_CNTT.QuanlydiemDataSet37TableAdapters.tblLOPTableAdapter();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrLop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblLOPBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quanlydiemDataSet37)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -107,12 +104,9 @@
             // tblLOPBindingSource
             // 
             this.tblLOPBindingSource.DataMember = "tblLOP";
-            this.tblLOPBindingSource.DataSource = this.quanlydiemDataSet37;
             // 
             // quanlydiemDataSet37
             // 
-            this.quanlydiemDataSet37.DataSetName = "QuanlydiemDataSet37";
-            this.quanlydiemDataSet37.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // groupBox1
             // 
@@ -255,7 +249,6 @@
             // 
             // tblLOPTableAdapter
             // 
-            this.tblLOPTableAdapter.ClearBeforeFill = true;
             // 
             // frmLop
             // 
@@ -276,7 +269,6 @@
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgrLop)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblLOPBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quanlydiemDataSet37)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
@@ -301,9 +293,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.DataGridView dgrLop;
-        private QuanlydiemDataSet37 quanlydiemDataSet37;
         private System.Windows.Forms.BindingSource tblLOPBindingSource;
-        private Quản_lý_điểm_sinh_vien_CNTT.QuanlydiemDataSet37TableAdapters.tblLOPTableAdapter tblLOPTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn maKhoaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn maLopDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenLopDataGridViewTextBoxColumn;

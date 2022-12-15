@@ -54,20 +54,17 @@
             this.diemThiLaiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hocKiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tblKETQUA2BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.quanlydiemDataSet42 = new Quản_lý_điểm_sinh_vien_CNTT.QuanlydiemDataSet42();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.tblKET_QUA2TableAdapter = new Quản_lý_điểm_sinh_vien_CNTT.QuanlydiemDataSet42TableAdapters.tblKET_QUA2TableAdapter();
             this.btnXuat = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrDiem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblKETQUA2BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quanlydiemDataSet42)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -310,12 +307,9 @@
             // tblKETQUA2BindingSource
             // 
             this.tblKETQUA2BindingSource.DataMember = "tblKET_QUA2";
-            this.tblKETQUA2BindingSource.DataSource = this.quanlydiemDataSet42;
             // 
             // quanlydiemDataSet42
             // 
-            this.quanlydiemDataSet42.DataSetName = "QuanlydiemDataSet42";
-            this.quanlydiemDataSet42.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // button1
             // 
@@ -372,7 +366,6 @@
             // 
             // tblKET_QUA2TableAdapter
             // 
-            this.tblKET_QUA2TableAdapter.ClearBeforeFill = true;
             // 
             // btnXuat
             // 
@@ -413,7 +406,6 @@
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgrDiem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblKETQUA2BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quanlydiemDataSet42)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -444,9 +436,7 @@
         private System.Windows.Forms.TextBox txtDiemThi2;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridView dgrDiem;
-        private QuanlydiemDataSet42 quanlydiemDataSet42;
         private System.Windows.Forms.BindingSource tblKETQUA2BindingSource;
-        private Quản_lý_điểm_sinh_vien_CNTT.QuanlydiemDataSet42TableAdapters.tblKET_QUA2TableAdapter tblKET_QUA2TableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn maSVDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn hoTenDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn maLopDataGridViewTextBoxColumn;

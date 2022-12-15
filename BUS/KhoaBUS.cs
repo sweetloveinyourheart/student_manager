@@ -33,5 +33,11 @@ namespace BUS
             }
         }
 
+        public void FillKhoaDGR(DataGridView dgrKhoa)
+        {
+            List<Khoa> khoas = KhoaDAO.Instance.FormLoad();
+            dgrKhoa.DataSource = khoas;
+        }
+
     }
 }
