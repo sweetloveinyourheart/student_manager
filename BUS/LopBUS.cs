@@ -48,5 +48,66 @@ namespace BUS
                 cboLop.Items.Add(lop.MaLop);
             }
         }
+
+        public void ThemLop(
+            ErrorProvider errorProvider1,
+            TextBox txtMaLop,
+            TextBox txtTenLop,
+            ComboBox cboKhoa
+            )
+        {
+            errorProvider1.Clear();
+            if (txtMaLop.Text == "")
+            {
+                errorProvider1.SetError(txtMaLop, "Mã môn không để trống!");
+            }
+            else if (!LopDAO.Instance.ThemLop(
+                txtMaLop.Text,
+                txtTenLop.Text,
+                cboKhoa.Text
+                ))
+            {
+                MessageBox.Show("Bạn đã nhập thông tin cho môn: " + txtTenLop.Text, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtMaLop.Focus();
+            }
+            else
+            {
+                // Thực hiện truy vấn
+                MessageBox.Show("Nhập thông tin thành công", "Thông báo!");
+            }
+        }
+
+        public void SuaLop(
+            TextBox txtMaLop,
+            TextBox txtTenLop,
+            ComboBox cboKhoa
+            )
+        {
+            LopDAO.Instance.SuaLop(
+                txtMaLop.Text,
+                txtTenLop.Text,
+                cboKhoa.Text
+                );
+            MessageBox.Show("Cập nhật dữ liệu thành công", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        public void XoaLop(
+            TextBox txtMaLop
+            )
+        {
+            // Thuc hien xoa du lieu
+            if (!LopDAO.Instance.XoaLop(txtMaLop.Text))
+            {
+                MessageBox.Show("Bạn phải xóa Mã Lớp " + txtMaLop.Text + "từ bảng Sinh Viên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
+
+            else if (MessageBox.Show("Bạn có chắc chắn muốn xóa ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                MessageBox.Show("Xóa dữ liệu thành công", "Thông báo!");
+
+            }
+        }
+
     }
 }
