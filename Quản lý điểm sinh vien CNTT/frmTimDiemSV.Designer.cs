@@ -33,17 +33,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgrDIEMSV = new System.Windows.Forms.DataGridView();
-            this.maSVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hoTenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.maLopDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.maMonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.diemTBDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.diemThiLan1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.diemThiLan2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.diemTongKetDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hanhKiemDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hocKiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ghiChuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tblKETQUABindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnXuat = new System.Windows.Forms.Button();
@@ -72,7 +61,7 @@
             this.label1.ForeColor = System.Drawing.Color.Blue;
             this.label1.Location = new System.Drawing.Point(286, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(297, 24);
+            this.label1.Size = new System.Drawing.Size(613, 48);
             this.label1.TabIndex = 0;
             this.label1.Text = "THÔNG TIN ĐIỂM SINH VIÊN";
             // 
@@ -88,98 +77,16 @@
             // 
             // dgrDIEMSV
             // 
-            this.dgrDIEMSV.AutoGenerateColumns = false;
             this.dgrDIEMSV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgrDIEMSV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.maSVDataGridViewTextBoxColumn,
-            this.hoTenDataGridViewTextBoxColumn,
-            this.maLopDataGridViewTextBoxColumn,
-            this.maMonDataGridViewTextBoxColumn,
-            this.diemTBDataGridViewTextBoxColumn,
-            this.diemThiLan1DataGridViewTextBoxColumn,
-            this.diemThiLan2DataGridViewTextBoxColumn,
-            this.diemTongKetDataGridViewTextBoxColumn,
-            this.hanhKiemDataGridViewTextBoxColumn,
-            this.hocKiDataGridViewTextBoxColumn,
-            this.ghiChuDataGridViewTextBoxColumn});
-            this.dgrDIEMSV.DataSource = this.tblKETQUABindingSource;
             this.dgrDIEMSV.Location = new System.Drawing.Point(9, 18);
             this.dgrDIEMSV.Name = "dgrDIEMSV";
+            this.dgrDIEMSV.RowHeadersWidth = 82;
             this.dgrDIEMSV.Size = new System.Drawing.Size(610, 359);
             this.dgrDIEMSV.TabIndex = 0;
-            // 
-            // maSVDataGridViewTextBoxColumn
-            // 
-            this.maSVDataGridViewTextBoxColumn.DataPropertyName = "MaSV";
-            this.maSVDataGridViewTextBoxColumn.HeaderText = "MaSV";
-            this.maSVDataGridViewTextBoxColumn.Name = "maSVDataGridViewTextBoxColumn";
-            // 
-            // hoTenDataGridViewTextBoxColumn
-            // 
-            this.hoTenDataGridViewTextBoxColumn.DataPropertyName = "HoTen";
-            this.hoTenDataGridViewTextBoxColumn.HeaderText = "HoTen";
-            this.hoTenDataGridViewTextBoxColumn.Name = "hoTenDataGridViewTextBoxColumn";
-            // 
-            // maLopDataGridViewTextBoxColumn
-            // 
-            this.maLopDataGridViewTextBoxColumn.DataPropertyName = "MaLop";
-            this.maLopDataGridViewTextBoxColumn.HeaderText = "MaLop";
-            this.maLopDataGridViewTextBoxColumn.Name = "maLopDataGridViewTextBoxColumn";
-            // 
-            // maMonDataGridViewTextBoxColumn
-            // 
-            this.maMonDataGridViewTextBoxColumn.DataPropertyName = "MaMon";
-            this.maMonDataGridViewTextBoxColumn.HeaderText = "MaMon";
-            this.maMonDataGridViewTextBoxColumn.Name = "maMonDataGridViewTextBoxColumn";
-            // 
-            // diemTBDataGridViewTextBoxColumn
-            // 
-            this.diemTBDataGridViewTextBoxColumn.DataPropertyName = "DiemTB";
-            this.diemTBDataGridViewTextBoxColumn.HeaderText = "DiemTB";
-            this.diemTBDataGridViewTextBoxColumn.Name = "diemTBDataGridViewTextBoxColumn";
-            // 
-            // diemThiLan1DataGridViewTextBoxColumn
-            // 
-            this.diemThiLan1DataGridViewTextBoxColumn.DataPropertyName = "DiemThiLan1";
-            this.diemThiLan1DataGridViewTextBoxColumn.HeaderText = "DiemThiLan1";
-            this.diemThiLan1DataGridViewTextBoxColumn.Name = "diemThiLan1DataGridViewTextBoxColumn";
-            // 
-            // diemThiLan2DataGridViewTextBoxColumn
-            // 
-            this.diemThiLan2DataGridViewTextBoxColumn.DataPropertyName = "DiemThiLan2";
-            this.diemThiLan2DataGridViewTextBoxColumn.HeaderText = "DiemThiLan2";
-            this.diemThiLan2DataGridViewTextBoxColumn.Name = "diemThiLan2DataGridViewTextBoxColumn";
-            // 
-            // diemTongKetDataGridViewTextBoxColumn
-            // 
-            this.diemTongKetDataGridViewTextBoxColumn.DataPropertyName = "DiemTongKet";
-            this.diemTongKetDataGridViewTextBoxColumn.HeaderText = "DiemTongKet";
-            this.diemTongKetDataGridViewTextBoxColumn.Name = "diemTongKetDataGridViewTextBoxColumn";
-            // 
-            // hanhKiemDataGridViewTextBoxColumn
-            // 
-            this.hanhKiemDataGridViewTextBoxColumn.DataPropertyName = "HanhKiem";
-            this.hanhKiemDataGridViewTextBoxColumn.HeaderText = "HanhKiem";
-            this.hanhKiemDataGridViewTextBoxColumn.Name = "hanhKiemDataGridViewTextBoxColumn";
-            // 
-            // hocKiDataGridViewTextBoxColumn
-            // 
-            this.hocKiDataGridViewTextBoxColumn.DataPropertyName = "HocKi";
-            this.hocKiDataGridViewTextBoxColumn.HeaderText = "HocKi";
-            this.hocKiDataGridViewTextBoxColumn.Name = "hocKiDataGridViewTextBoxColumn";
-            // 
-            // ghiChuDataGridViewTextBoxColumn
-            // 
-            this.ghiChuDataGridViewTextBoxColumn.DataPropertyName = "GhiChu";
-            this.ghiChuDataGridViewTextBoxColumn.HeaderText = "GhiChu";
-            this.ghiChuDataGridViewTextBoxColumn.Name = "ghiChuDataGridViewTextBoxColumn";
             // 
             // tblKETQUABindingSource
             // 
             this.tblKETQUABindingSource.DataMember = "tblKET_QUA";
-            // 
-            // quanlydiemDataSet49
-            // 
             // 
             // groupBox2
             // 
@@ -244,7 +151,7 @@
             this.cboMonHoc.FormattingEnabled = true;
             this.cboMonHoc.Location = new System.Drawing.Point(81, 69);
             this.cboMonHoc.Name = "cboMonHoc";
-            this.cboMonHoc.Size = new System.Drawing.Size(121, 23);
+            this.cboMonHoc.Size = new System.Drawing.Size(121, 37);
             this.cboMonHoc.TabIndex = 3;
             this.cboMonHoc.SelectedIndexChanged += new System.EventHandler(this.cboMonHoc_SelectedIndexChanged);
             // 
@@ -253,7 +160,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(6, 77);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 15);
+            this.label3.Size = new System.Drawing.Size(107, 29);
             this.label3.TabIndex = 3;
             this.label3.Text = "Môn học";
             // 
@@ -261,7 +168,7 @@
             // 
             this.txtMaSV.Location = new System.Drawing.Point(81, 34);
             this.txtMaSV.Name = "txtMaSV";
-            this.txtMaSV.Size = new System.Drawing.Size(121, 22);
+            this.txtMaSV.Size = new System.Drawing.Size(121, 37);
             this.txtMaSV.TabIndex = 1;
             // 
             // label2
@@ -269,16 +176,13 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(6, 37);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 15);
+            this.label2.Size = new System.Drawing.Size(156, 29);
             this.label2.TabIndex = 0;
             this.label2.Text = "Mã Sinh Viên";
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // tblKET_QUATableAdapter
-            // 
             // 
             // groupBox3
             // 
@@ -296,7 +200,7 @@
             this.cboKhoa.FormattingEnabled = true;
             this.cboKhoa.Location = new System.Drawing.Point(81, 45);
             this.cboKhoa.Name = "cboKhoa";
-            this.cboKhoa.Size = new System.Drawing.Size(121, 23);
+            this.cboKhoa.Size = new System.Drawing.Size(121, 37);
             this.cboKhoa.TabIndex = 27;
             this.cboKhoa.SelectedIndexChanged += new System.EventHandler(this.cboKhoa_SelectedIndexChanged);
             // 
@@ -306,13 +210,13 @@
             this.label6.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(6, 48);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(54, 15);
+            this.label6.Size = new System.Drawing.Size(106, 29);
             this.label6.TabIndex = 26;
             this.label6.Text = "Mã khoa";
             // 
             // frmTimDiemSV
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(873, 463);
             this.Controls.Add(this.groupBox3);

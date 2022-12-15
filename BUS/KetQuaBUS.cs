@@ -137,6 +137,7 @@ namespace BUS
                     int.Parse(cboHocKi.Text),
                     txtGhiChu.Text
                 );
+                MessageBox.Show("Nhập thông tin thành công", "Thông báo!");
             }
         }
 

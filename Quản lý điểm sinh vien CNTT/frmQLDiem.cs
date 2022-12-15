@@ -29,6 +29,7 @@ namespace Quản_lý_điểm_sinh_vien_CNTT
 
         private void frmQLDiem_Load(object sender, EventArgs e)
         {
+            KetQuaBUS.Instance.FillKetQuaList(dgrDiem);
             KhoaBUS.Instance.FillKhoaList(cboKhoaHoc);
 
             //Load lai du lieu
@@ -81,17 +82,15 @@ namespace Quản_lý_điểm_sinh_vien_CNTT
 
         private void dgrDiem_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            dgrDiem.CurrentRow.ToString();
             txtMaSV.Text = dgrDiem.CurrentRow.Cells[0].Value.ToString();
-            txtHoTen.Text = dgrDiem.CurrentRow.Cells[1].Value.ToString();
             cboLop.Text = dgrDiem.CurrentRow.Cells[2].Value.ToString();
             cboMonHoc.Text = dgrDiem.CurrentRow.Cells[3].Value.ToString();
             txtDiemTB.Text = dgrDiem.CurrentRow.Cells[4].Value.ToString();
-            //txtDiemThi1.Text = dgrDiem.CurrentRow.Cells[4].Value.ToString();
-            txtDiemTK.Text = dgrDiem.CurrentRow.Cells[6].Value.ToString();
-            cboHanhKiem.Text = dgrDiem.CurrentRow.Cells[7].Value.ToString();
-            cboHocKi.Text = dgrDiem.CurrentRow.Cells[8].Value.ToString();
-            txtGhiChu.Text = dgrDiem.CurrentRow.Cells[9].Value.ToString();
+            txtDiemThi1.Text = dgrDiem.CurrentRow.Cells[5].Value.ToString();
+            txtDiemTK.Text = dgrDiem.CurrentRow.Cells[7].Value.ToString();
+            cboHanhKiem.Text = dgrDiem.CurrentRow.Cells[8].Value.ToString();
+            cboHocKi.Text = dgrDiem.CurrentRow.Cells[9].Value.ToString();
+            txtGhiChu.Text = dgrDiem.CurrentRow.Cells[10].Value.ToString();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -149,7 +148,7 @@ namespace Quản_lý_điểm_sinh_vien_CNTT
                 this.txtDiemTK.Text = Convert.ToString(DIEMTK);
             }
             DIEMTK = double.Parse(this.txtDiemTK.Text);
-            if (DIEMTK <= 4.5)
+            if (DIEMTK <= 4.0)
             {
                 this.txtGhiChu.Text = "Thi lại";
             }
@@ -192,7 +191,7 @@ namespace Quản_lý_điểm_sinh_vien_CNTT
                 this.txtDiemTK.Text = Convert.ToString(DIEMTK);
             }
             DIEMTK = double.Parse(this.txtDiemTK.Text);
-            if ((DIEMTK <= 4.5))
+            if ((DIEMTK <= 4.0))
             {
                 this.txtGhiChu.Text = "Thi lại";
             }

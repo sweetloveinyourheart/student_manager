@@ -50,23 +50,12 @@
             this.label12 = new System.Windows.Forms.Label();
             this.txtDiemTK = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtHoTen = new System.Windows.Forms.TextBox();
             this.txtMaSV = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtGhiChu = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dgrDiem = new System.Windows.Forms.DataGridView();
-            this.maSVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hoTenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.maLopDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.maMonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.diemTBDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.diemThiLan1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.diemTongKetDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hanhKiemDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hocKiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ghiChuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tblKETQUABindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.button4 = new System.Windows.Forms.Button();
@@ -74,7 +63,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnXuat = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -207,8 +195,6 @@
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.txtDiemTK);
             this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.txtHoTen);
-            this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.txtMaSV);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Location = new System.Drawing.Point(21, 185);
@@ -248,7 +234,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(556, 27);
+            this.label13.Location = new System.Drawing.Point(204, 27);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(128, 29);
             this.label13.TabIndex = 23;
@@ -263,7 +249,7 @@
             "Trung bình",
             "Khá ",
             "Tốt"});
-            this.cboHanhKiem.Location = new System.Drawing.Point(639, 23);
+            this.cboHanhKiem.Location = new System.Drawing.Point(286, 23);
             this.cboHanhKiem.Name = "cboHanhKiem";
             this.cboHanhKiem.Size = new System.Drawing.Size(98, 37);
             this.cboHanhKiem.TabIndex = 7;
@@ -301,13 +287,6 @@
             this.label9.Size = new System.Drawing.Size(161, 29);
             this.label9.TabIndex = 14;
             this.label9.Text = "Điểm tổng kết";
-            // 
-            // txtHoTen
-            // 
-            this.txtHoTen.Location = new System.Drawing.Point(316, 23);
-            this.txtHoTen.Name = "txtHoTen";
-            this.txtHoTen.Size = new System.Drawing.Size(163, 37);
-            this.txtHoTen.TabIndex = 6;
             // 
             // txtMaSV
             // 
@@ -357,21 +336,8 @@
             // 
             // dgrDiem
             // 
-            this.dgrDiem.AutoGenerateColumns = false;
             this.dgrDiem.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dgrDiem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgrDiem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.maSVDataGridViewTextBoxColumn,
-            this.hoTenDataGridViewTextBoxColumn,
-            this.maLopDataGridViewTextBoxColumn,
-            this.maMonDataGridViewTextBoxColumn,
-            this.diemTBDataGridViewTextBoxColumn,
-            this.diemThiLan1DataGridViewTextBoxColumn,
-            this.diemTongKetDataGridViewTextBoxColumn,
-            this.hanhKiemDataGridViewTextBoxColumn,
-            this.hocKiDataGridViewTextBoxColumn,
-            this.ghiChuDataGridViewTextBoxColumn});
-            this.dgrDiem.DataSource = this.tblKETQUABindingSource;
             this.dgrDiem.Location = new System.Drawing.Point(10, 18);
             this.dgrDiem.Name = "dgrDiem";
             this.dgrDiem.RowHeadersWidth = 82;
@@ -379,92 +345,9 @@
             this.dgrDiem.TabIndex = 0;
             this.dgrDiem.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrDiem_CellContentClick);
             // 
-            // maSVDataGridViewTextBoxColumn
-            // 
-            this.maSVDataGridViewTextBoxColumn.DataPropertyName = "MaSV";
-            this.maSVDataGridViewTextBoxColumn.HeaderText = "MaSV";
-            this.maSVDataGridViewTextBoxColumn.MinimumWidth = 10;
-            this.maSVDataGridViewTextBoxColumn.Name = "maSVDataGridViewTextBoxColumn";
-            this.maSVDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // hoTenDataGridViewTextBoxColumn
-            // 
-            this.hoTenDataGridViewTextBoxColumn.DataPropertyName = "HoTen";
-            this.hoTenDataGridViewTextBoxColumn.HeaderText = "HoTen";
-            this.hoTenDataGridViewTextBoxColumn.MinimumWidth = 10;
-            this.hoTenDataGridViewTextBoxColumn.Name = "hoTenDataGridViewTextBoxColumn";
-            this.hoTenDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // maLopDataGridViewTextBoxColumn
-            // 
-            this.maLopDataGridViewTextBoxColumn.DataPropertyName = "MaLop";
-            this.maLopDataGridViewTextBoxColumn.HeaderText = "MaLop";
-            this.maLopDataGridViewTextBoxColumn.MinimumWidth = 10;
-            this.maLopDataGridViewTextBoxColumn.Name = "maLopDataGridViewTextBoxColumn";
-            this.maLopDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // maMonDataGridViewTextBoxColumn
-            // 
-            this.maMonDataGridViewTextBoxColumn.DataPropertyName = "MaMon";
-            this.maMonDataGridViewTextBoxColumn.HeaderText = "MaMon";
-            this.maMonDataGridViewTextBoxColumn.MinimumWidth = 10;
-            this.maMonDataGridViewTextBoxColumn.Name = "maMonDataGridViewTextBoxColumn";
-            this.maMonDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // diemTBDataGridViewTextBoxColumn
-            // 
-            this.diemTBDataGridViewTextBoxColumn.DataPropertyName = "DiemTB";
-            this.diemTBDataGridViewTextBoxColumn.HeaderText = "DiemTB";
-            this.diemTBDataGridViewTextBoxColumn.MinimumWidth = 10;
-            this.diemTBDataGridViewTextBoxColumn.Name = "diemTBDataGridViewTextBoxColumn";
-            this.diemTBDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // diemThiLan1DataGridViewTextBoxColumn
-            // 
-            this.diemThiLan1DataGridViewTextBoxColumn.DataPropertyName = "DiemThiLan1";
-            this.diemThiLan1DataGridViewTextBoxColumn.HeaderText = "DiemThiLan1";
-            this.diemThiLan1DataGridViewTextBoxColumn.MinimumWidth = 10;
-            this.diemThiLan1DataGridViewTextBoxColumn.Name = "diemThiLan1DataGridViewTextBoxColumn";
-            this.diemThiLan1DataGridViewTextBoxColumn.Width = 200;
-            // 
-            // diemTongKetDataGridViewTextBoxColumn
-            // 
-            this.diemTongKetDataGridViewTextBoxColumn.DataPropertyName = "DiemTongKet";
-            this.diemTongKetDataGridViewTextBoxColumn.HeaderText = "DiemTongKet";
-            this.diemTongKetDataGridViewTextBoxColumn.MinimumWidth = 10;
-            this.diemTongKetDataGridViewTextBoxColumn.Name = "diemTongKetDataGridViewTextBoxColumn";
-            this.diemTongKetDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // hanhKiemDataGridViewTextBoxColumn
-            // 
-            this.hanhKiemDataGridViewTextBoxColumn.DataPropertyName = "HanhKiem";
-            this.hanhKiemDataGridViewTextBoxColumn.HeaderText = "HanhKiem";
-            this.hanhKiemDataGridViewTextBoxColumn.MinimumWidth = 10;
-            this.hanhKiemDataGridViewTextBoxColumn.Name = "hanhKiemDataGridViewTextBoxColumn";
-            this.hanhKiemDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // hocKiDataGridViewTextBoxColumn
-            // 
-            this.hocKiDataGridViewTextBoxColumn.DataPropertyName = "HocKi";
-            this.hocKiDataGridViewTextBoxColumn.HeaderText = "HocKi";
-            this.hocKiDataGridViewTextBoxColumn.MinimumWidth = 10;
-            this.hocKiDataGridViewTextBoxColumn.Name = "hocKiDataGridViewTextBoxColumn";
-            this.hocKiDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // ghiChuDataGridViewTextBoxColumn
-            // 
-            this.ghiChuDataGridViewTextBoxColumn.DataPropertyName = "GhiChu";
-            this.ghiChuDataGridViewTextBoxColumn.HeaderText = "GhiChu";
-            this.ghiChuDataGridViewTextBoxColumn.MinimumWidth = 10;
-            this.ghiChuDataGridViewTextBoxColumn.Name = "ghiChuDataGridViewTextBoxColumn";
-            this.ghiChuDataGridViewTextBoxColumn.Width = 200;
-            // 
             // tblKETQUABindingSource
             // 
             this.tblKETQUABindingSource.DataMember = "tblKET_QUA";
-            // 
-            // quanlydiemDataSet47
-            // 
             // 
             // errorProvider1
             // 
@@ -523,8 +406,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-          
-            // 
             // btnXuat
             // 
             this.btnXuat.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -538,15 +419,6 @@
             this.btnXuat.Text = "In Bảng Điểm";
             this.btnXuat.UseVisualStyleBackColor = true;
             this.btnXuat.Click += new System.EventHandler(this.btnXuat_Click);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(228, 30);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(114, 29);
-            this.label8.TabIndex = 12;
-            this.label8.Text = "Họ và tên";
             // 
             // frmQLDiem
             // 
@@ -603,7 +475,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtDiemTK;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtHoTen;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox cboHanhKiem;
         private System.Windows.Forms.GroupBox groupBox4;
@@ -628,6 +499,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn hocKiDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ghiChuDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btnXuat;
-        private System.Windows.Forms.Label label8;
     }
 }
