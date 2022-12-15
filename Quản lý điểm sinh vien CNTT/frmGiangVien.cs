@@ -8,8 +8,6 @@ namespace Quản_lý_điểm_sinh_vien_CNTT
 {
     public partial class frmGiangVien : Form
     {
-        private CommonConnect cc = new CommonConnect();
-        SqlConnection conn = null;
         public frmGiangVien()
         {
             InitializeComponent();

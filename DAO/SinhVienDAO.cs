@@ -7,16 +7,18 @@ using DTO;
 
 namespace DAO
 {
-     public class SinhVienDAO
-     {
+    public class SinhVienDAO
+    {
         private static SinhVienDAO instance;
 
-        public static SinhVienDAO Instance { 
-            get { 
-                if (instance == null) 
+        public static SinhVienDAO Instance
+        {
+            get
+            {
+                if (instance == null)
                     instance = new SinhVienDAO();
-                return instance; 
-            } 
+                return instance;
+            }
         }
 
         private SinhVienDAO() { }
@@ -26,10 +28,10 @@ namespace DAO
         public List<SinhVien> FormLoad()
         {
             List<SinhVien> list = new List<SinhVien>();
-      
+
             list = db.tblSINH_VIENs.Select(s => new SinhVien(
-                s.MaSv, 
-                s.HoTen, 
+                s.MaSv,
+                s.HoTen,
                 s.NgaySinh,
                 s.GioiTinh,
                 s.DiaChi,
@@ -59,6 +61,30 @@ namespace DAO
             return list;
         }
 
+        public List<SinhVien> FindSvByGhiChu(string ghichu)
+        {
+            List<SinhVien> list = new List<SinhVien>();
+
+            list = db.tblSINH_VIENs
+                .Join(db.tblKET_QUAs,
+                    sv => sv.MaSv,
+                    kq => kq.MaSV,
+                    (sv, kq) => new { tblSINH_VIEN = sv, tblKET_QUA = kq }
+                )
+                .Where(eq => eq.tblKET_QUA.GhiChu == ghichu)
+                .Select(s => new SinhVien(
+                    s.tblSINH_VIEN.MaSv,
+                    s.tblSINH_VIEN.HoTen,
+                    s.tblSINH_VIEN.NgaySinh,
+                    s.tblSINH_VIEN.GioiTinh,
+                    s.tblSINH_VIEN.DiaChi,
+                    s.tblSINH_VIEN.MaLop
+                )
+            ).ToList();
+
+            return list;
+        }
+
         public bool ThemSV(
             string masv,
             string hoten,
@@ -69,7 +95,7 @@ namespace DAO
             )
         {
             SinhVien sv = db.tblSINH_VIENs.Where(eq => eq.MaSv == masv).Select(s => new SinhVien()).FirstOrDefault();
-            if(sv != null)
+            if (sv != null)
             {
                 return false;
             }

@@ -12,14 +12,14 @@ namespace BUS
     public class SinhVienBUS
     {
         private static SinhVienBUS instance;
-        public static SinhVienBUS Instance 
-        { 
-            get 
+        public static SinhVienBUS Instance
+        {
+            get
             {
                 if (instance == null)
                     instance = new SinhVienBUS();
-                return instance; 
-            } 
+                return instance;
+            }
         }
 
         private SinhVienBUS() { }
@@ -36,6 +36,12 @@ namespace BUS
             dgrDSSV.DataSource = SinhVienDAO.Instance.FindSvByMaLop(cboLop.Text);
         }
 
+        public void FillSinhVienListByGhiChu(DataGridView dgrDSSV, ComboBox cboGhiChu)
+        {
+            // Đưa ra DataGridView
+            dgrDSSV.DataSource = SinhVienDAO.Instance.FindSvByGhiChu(cboGhiChu.Text);
+        }
+
         public void ThemSinhVien(
             ErrorProvider errorProvider1,
             TextBox txtMaSV,
@@ -44,7 +50,7 @@ namespace BUS
             MaskedTextBox mskNgaySinh,
             ComboBox cboGioiTinh,
             ComboBox cboMalop
-            )      
+            )
         {
             bool isSuccess = SinhVienDAO.Instance.ThemSV(
                 txtMaSV.Text,
@@ -78,7 +84,7 @@ namespace BUS
             )
         {
             bool isSuccess = SinhVienDAO.Instance.XoaSV(txtMaSV.Text);
-            
+
             if (MessageBox.Show("Bạn có chắc chắn muốn xóa ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 // Xoa
