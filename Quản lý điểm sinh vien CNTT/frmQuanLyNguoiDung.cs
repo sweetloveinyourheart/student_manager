@@ -18,7 +18,7 @@ namespace Quản_lý_điểm_sinh_vien_CNTT
 
         private void btnThemmoi_Click(object sender, EventArgs e)
         {
-            LoginBUS.Instance.ThemNguoiDung(errorProvider1, txtTaikhoan, txtMK, txtConfimMk, txtHoTen, cboGioiTinh, mskPhone, txtEmail, cboGioiTinh);
+            LoginBUS.Instance.ThemNguoiDung(errorProvider1, txtTaikhoan, txtMK, txtConfimMk, txtHoTen, cboGioiTinh, mskPhone, txtEmail, cboQuyen);
             //Fill du lieu 
             FillDataGridView_Login();
         }
@@ -64,7 +64,7 @@ namespace Quản_lý_điểm_sinh_vien_CNTT
             else
             {
                 // Thực hiện truy vấn
-                LoginBUS.Instance.SuaNguoiDung(errorProvider1, txtTaikhoan, txtMK, txtHoTen, cboGioiTinh, mskPhone, txtEmail, cboGioiTinh);
+                LoginBUS.Instance.SuaNguoiDung(errorProvider1, txtTaikhoan, txtMK, txtHoTen, cboGioiTinh, mskPhone, txtEmail, cboQuyen);
                 //Load lai du lieu
                 FillDataGridView_Login();
                
