@@ -59,5 +59,68 @@ namespace BUS
                 cboMonHoc.Items.Add(mon.MaMon);
             }
         }
+
+        public void ThemMonHoc(
+            ErrorProvider errorProvider1,
+            TextBox txtMaMon,
+            TextBox txtTenMon,
+            TextBox txtSDVHT,
+            TextBox txtMaGV,
+            TextBox txtHocKy,
+            ComboBox cboKhoa
+            )
+        {
+            errorProvider1.Clear();
+            if (txtMaMon.Text == "")
+            {
+                errorProvider1.SetError(txtMaMon, "Mã môn không để trống!");
+            }
+            else if (!MonHocDAO.Instance.ThemMonHoc(
+                txtMaMon.Text, 
+                txtTenMon.Text,
+                int.Parse(txtSDVHT.Text),
+                txtMaGV.Text,
+                txtHocKy.Text,
+                cboKhoa.Text
+                ))
+            {
+                MessageBox.Show("Bạn đã nhập thông tin cho môn: " + txtTenMon.Text, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtMaMon.Focus();
+            }
+            else
+            {
+                // Thực hiện truy vấn
+                MessageBox.Show("Nhập thông tin thành công", "Thông báo!");
+            }
+        }
+
+        public void SuaMonHoc(
+            TextBox txtMaMon,
+            TextBox txtTenMon,
+            TextBox txtSDVHT,
+            TextBox txtMaGV,
+            TextBox txtHocKy,
+            ComboBox cboKhoa
+            )
+        {
+            MonHocDAO.Instance.SuaMonHoc(
+                txtMaMon.Text,
+                txtTenMon.Text,
+                int.Parse(txtSDVHT.Text),
+                txtMaGV.Text,
+                txtHocKy.Text,
+                cboKhoa.Text
+                );
+            MessageBox.Show("Cập nhật dữ liệu thành công", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        public void XoaMonHoc(
+            TextBox txtMaMon
+            )
+        {
+            // Thuc hien xoa du lieu
+            MonHocDAO.Instance.XoaMonHoc(txtMaMon.Text);
+            MessageBox.Show("Xóa dữ liệu thành công", "Thông báo!");
+        }
     }
 }

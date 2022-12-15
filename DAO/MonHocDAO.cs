@@ -58,5 +58,80 @@ namespace DAO
 
             return list;
         }
+
+        public bool ThemMonHoc(
+            string mamon,
+            string tenmon, 
+            int? soDVHT, 
+            string magv,
+            string hocki, 
+            string makhoa
+            )
+        {
+            MonHoc sv = db.tblMONs.Where(eq => eq.MaMon == mamon).Select(s => new MonHoc()).FirstOrDefault();
+            if (sv != null)
+            {
+                return false;
+            }
+
+            tblMON newMon = new tblMON();
+
+            newMon.MaMon = mamon;
+            newMon.TenMon = tenmon;
+            newMon.SoDVHT = soDVHT;
+            newMon.MaKhoa = makhoa;
+            newMon.MaGV = magv;
+            newMon.HocKi = hocki;
+
+            db.tblMONs.InsertOnSubmit(newMon);
+
+            db.SubmitChanges();
+
+            return true;
+        }
+
+        public bool SuaMonHoc(
+            string mamon,
+            string tenmon,
+            int? soDVHT,
+            string magv,
+            string hocki,
+            string makhoa
+            )
+        {
+            tblMON mon = db.tblMONs.Where(eq => eq.MaMon == mamon).Select(s => s).FirstOrDefault();
+            if (mon == null)
+            {
+                return false;
+            }
+
+            mon.MaMon = mamon;
+            mon.TenMon = tenmon;
+            mon.SoDVHT = soDVHT;
+            mon.MaKhoa = makhoa;
+            mon.MaGV = magv;
+            mon.HocKi = hocki;
+
+            db.SubmitChanges();
+
+            return true;
+        }
+
+        public bool XoaMonHoc(
+            string mamon
+            )
+        {
+            tblMON mon = db.tblMONs.Where(eq => eq.MaMon == mamon).Select(s => s).FirstOrDefault();
+            if (mon == null)
+            {
+                return false;
+            }
+
+            db.tblMONs.DeleteOnSubmit(mon);
+
+            db.SubmitChanges();
+
+            return true;
+        }
     }
 }

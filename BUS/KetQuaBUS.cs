@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DAO;
+using DTO;
 
 namespace BUS
 {
@@ -25,8 +26,9 @@ namespace BUS
 
         public void FillKetQuaList(DataGridView dgr)
         {
+            List<KetQua> ketQuas = KetQuaDAO.Instance.FormLoad();
             // Đưa ra DataGridView
-            dgr.DataSource = KetQuaDAO.Instance.FormLoad();
+            dgr.DataSource = ketQuas;
         }
 
         public void FillKQListByMSV(
@@ -35,8 +37,9 @@ namespace BUS
             ComboBox cboMonHoc
             )
         {
+            List<KetQua> ketQuas = KetQuaDAO.Instance.FindKQByMSV(msv.Text, cboMonHoc.Text);
             // Đưa ra DataGridView
-            dgr.DataSource = KetQuaDAO.Instance.FindKQByMSV(msv.Text, cboMonHoc.Text);
+            dgr.DataSource = ketQuas;
         }
 
         public void ThemKetQua(
