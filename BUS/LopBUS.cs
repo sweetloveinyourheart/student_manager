@@ -59,7 +59,7 @@ namespace BUS
             errorProvider1.Clear();
             if (txtMaLop.Text == "")
             {
-                errorProvider1.SetError(txtMaLop, "Mã môn không để trống!");
+                errorProvider1.SetError(txtMaLop, "Mã lớp không để trống!");
             }
             else if (!LopDAO.Instance.ThemLop(
                 txtMaLop.Text,
@@ -67,7 +67,7 @@ namespace BUS
                 cboKhoa.Text
                 ))
             {
-                MessageBox.Show("Bạn đã nhập thông tin cho môn: " + txtTenLop.Text, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn đã nhập thông tin cho lớp: " + txtTenLop.Text, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtMaLop.Focus();
             }
             else

@@ -15,8 +15,7 @@ namespace Quản_lý_điểm_sinh_vien_CNTT
 {
     public partial class frmKhoa : Form
     {
-        private CommonConnect cc = new CommonConnect();
-        SqlConnection conn = null;
+
         public frmKhoa()
         {
             InitializeComponent();
@@ -24,122 +23,37 @@ namespace Quản_lý_điểm_sinh_vien_CNTT
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string select1 = "Select MaKhoa from tblKHOA where MaKhoa='" + txtKhoa.Text + "' ";
-            SqlCommand cmd1 = new SqlCommand(select1, conn);
-            SqlDataReader reader1 = cmd1.ExecuteReader();
-            errorProvider1.Clear();
-            if (txtKhoa.Text == "")
-            {
-                errorProvider1.SetError(txtKhoa, "Khóa học không để trống!");
-                txtTenKhoa.Focus();
-            }
-            else if (reader1.Read())
-            {
-                {
-                    MessageBox.Show("Thông tin đã tồn tại !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txtKhoa.Focus();
-
-                }
-
-
-                //Tra tai nguyen 
-                reader1.Dispose();
-                cmd1.Dispose();
-            }
-            else
-            {
-                reader1.Dispose();
-                cmd1.Dispose();
-                // Thực hiện truy vấn
-                string insert = "Insert Into tblKHOA(MaKhoa,TenKhoa)" +
-                "Values('" + txtKhoa.Text + "',N'" + txtTenKhoa.Text + "')";
-                SqlCommand cmd = new SqlCommand(insert, conn);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Nhập thông tin thành công", "Thông báo!");
-
-                // Trả tài nguyên
-
-
-                cmd.Dispose();
-                //Fill du lieu vao Database
-                FillDataGridView_Khoa();
-            }
+            KhoaBUS.Instance.ThemKhoa(errorProvider1, txtKhoa, txtTenKhoa);
+            //Fill du lieu vao Database
+            FillDataGridView_Khoa();
+            
         }
 
         public void FillDataGridView_Khoa()
         {
-            // Thực hiện truy vấn
-            string select = "Select * From tblKHOA  ";
-            SqlCommand cmd = new SqlCommand(select, conn);
-
-            // Tạo đối tượng DataSet
-            DataSet ds = new DataSet();
-
-            // Tạo đối tượng điều hợp
-            SqlDataAdapter adapter = new SqlDataAdapter();
-            adapter.SelectCommand = cmd;
-
-            // Fill dữ liệu từ adapter vào DataSet
-            adapter.Fill(ds, "SINHVIEN");
-
-            // Đưa ra DataGridView
-            dgrKhoa.DataSource = ds;
-            dgrKhoa.DataMember = "SINHVIEN";
-            cmd.Dispose();
+            KhoaBUS.Instance.FillKhoaDGR(dgrKhoa);
         }
 
         private void frmLop_Khoa_Load(object sender, EventArgs e)
         {
-            KhoaBUS.Instance.FillKhoaDGR(dgrKhoa);
-
-            conn = cc.Connected();
-            if (conn.State == ConnectionState.Open) ;
+            FillDataGridView_Khoa();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             //Kiem tra 
 
-            string select1 = "Select MaKhoa from tblLOP where MaKhoa='" + txtKhoa.Text + "' ";
-            SqlCommand cmd1 = new SqlCommand(select1, conn);
-            SqlDataReader reader1 = cmd1.ExecuteReader();
+            KhoaBUS.Instance.XoaKhoa(txtKhoa);
+            FillDataGridView_Khoa();
 
-            if (reader1.Read())
-            {
-                {
-                    MessageBox.Show("Bạn phải xóa Mã Khoa "+ txtKhoa.Text +"từ bảng Lớp","Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                }
-            }
-            else if (MessageBox.Show("Bạn có chắc chắn muốn xóa ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                // Thuc hien xoa du lieu
-                reader1.Dispose();
-                cmd1.Dispose();
-                SqlCommand cmd = new SqlCommand("delete from tblKHOA where MaKhoa='" + txtKhoa.Text + "'", conn);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Xóa dữ liệu thành công", "Thông báo!");
-
-                // Trả tài nguyên
-                cmd.Dispose();
-                //Load lai du lieu
-                FillDataGridView_Khoa();
-            }
-            reader1.Dispose();
-            cmd1.Dispose();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             // Thực hiện truy vấn
-            string update = "Update tblKHOA Set TenKhoa=N'" + txtTenKhoa.Text + "' where MaKhoa='" + txtKhoa.Text + "' ";
-            SqlCommand cmd = new SqlCommand(update, conn);
-            cmd.ExecuteNonQuery();
-            MessageBox.Show("Cập nhật dữ liệu thành công", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            KhoaBUS.Instance.SuaKhoa(txtKhoa, txtTenKhoa);
             //Load lai du lieu
             FillDataGridView_Khoa();
-            // Trả tài nguyên
-            cmd.Dispose();
         }
 
         private void dgrKhoa_CellContentClick(object sender, DataGridViewCellEventArgs e)

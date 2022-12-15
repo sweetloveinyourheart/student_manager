@@ -37,5 +37,70 @@ namespace DAO
             return list;
         }
 
+        public bool ThemKhoa(
+            string maKhoa,
+            string tenKhoa
+            )
+        {
+            Khoa khoa = db.tblKHOAs.Where(eq => eq.MaKhoa == maKhoa).Select(s => new Khoa()).FirstOrDefault();
+            if (khoa != null)
+            {
+                return false;
+            }
+
+            tblKHOA newKhoa = new tblKHOA();
+
+            newKhoa.MaKhoa = maKhoa;
+            newKhoa.TenKhoa = tenKhoa;
+
+            db.tblKHOAs.InsertOnSubmit(newKhoa);
+
+            db.SubmitChanges();
+
+            return true;
+        }
+
+        public bool SuaKhoa(
+            string maKhoa,
+            string tenKhoa
+            )
+        {
+            tblKHOA Khoa = db.tblKHOAs.Where(eq => eq.MaKhoa == maKhoa).Select(s => s).FirstOrDefault();
+            if (Khoa == null)
+            {
+                return false;
+            }
+
+            Khoa.MaKhoa = maKhoa;
+            Khoa.TenKhoa = tenKhoa;
+
+            db.SubmitChanges();
+
+            return true;
+        }
+
+        public bool XoaKhoa(
+            string maKhoa
+            )
+        {
+            tblLOP sv = db.tblLOPs.Where(eq => eq.MaKhoa == maKhoa).Select(s => s).FirstOrDefault();
+            if (sv != null)
+            {
+                return false;
+            }
+
+            tblKHOA Khoa = db.tblKHOAs.Where(eq => eq.MaKhoa == maKhoa).Select(s => s).FirstOrDefault();
+            if (Khoa == null)
+            {
+                return false;
+            }
+
+            db.tblKHOAs.DeleteOnSubmit(Khoa);
+
+            db.SubmitChanges();
+
+            return true;
+        }
+
     }
 }
